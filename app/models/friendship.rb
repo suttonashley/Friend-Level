@@ -27,7 +27,7 @@ class Friendship < ApplicationRecord
   end
 
   def self.accept_one_side(user, friend)
-    request = find_by_user_id_and_friend_id(user.id, friend.id)
+    request = find_by(user_id: user, friend_id: friend)
     request.status = :accepted
     request.save!
   end
@@ -37,5 +37,22 @@ class Friendship < ApplicationRecord
     friend_friendship = Friendship.where(:user_id => friend.id, :friend_id => user.id).first
 
     return !user_friendship.nil? && !friend_friendship.nil?
+  end
+
+  def self.decline(user, friend)
+    transaction do
+      decline_one_side(user, friend)
+      decline_one_side(friend, user)
+    end
+  end
+
+  def self.decline_one_side(user, friend)
+    request = find_by_user_id_and_friend_id(user.id, friend.id)
+    request.status = :declined
+    request.save!
+  end
+
+  def accepted_friends
+    Friendship.where(:status => :accepted)
   end
 end

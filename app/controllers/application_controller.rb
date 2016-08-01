@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
   def authorize
    redirect_to '/login' unless current_user
   end
+
+private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end

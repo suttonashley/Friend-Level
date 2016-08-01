@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'friendships/create'
+  resources :users
 
-  get 'friendships/index'
 
-  get 'friendships/destroy'
+  root 'sessions#new'
 
-  root 'users#show'
+  get 'friendships/create' => 'friendships#create'
+  get 'friendships' => 'friendships#index'
+  get 'friendships/destroy' => 'friendships#destroy'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  resources :users
-
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  post '/accept_friend' => 'friendships#accept_friend'
 
 end
