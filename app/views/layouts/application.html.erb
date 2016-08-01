@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FriendLevel</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>FriendLevel</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Merienda+One" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Animate -->
-    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css"></link>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Merienda+One" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Animate -->
+  <link rel="stylesheet" href="http://s.mlcdn.co/animate.css"></link>
 </head>
-<!-- this is where the body begins -->
-  <body class="<%= controller_name %> <%= action_name %>">
-  <% if current_user %>
-    Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
-    <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Friend Requests
-  </button>
-  <form class="form-inline pull-xs-right">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Your Friend Requests</h4>
-        </div>
-        <div class="modal-body">
-          <% current_user.friends.each do |friend| %>
-          <p>
-            <div>
-            <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
-            <h2><%= friend.username %></h2>
-            <%= button_to 'Accept', accept_friend_path(friend: friend.id)%>
-            <%= button_to 'Decline', decline_friend_path(friend: friend.id)%>
-            <% end %>
-          </p>
-        </div>
+<!-- this is where the body begins -->
+<body>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="row">
+        <div class="col-md-12">
+          <% if current_user %>
+          Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Friend Requests
+          </button>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Your Friend Requests</h4>
+                </div>
+                <div class="modal-body">
+                  <% current_user.friends.each do |friend| %>
+                  <p>
+                    <div>
+                      <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
+                      <h2><%= friend.username %></h2>
+                      <%= button_to 'Accept', accept_friend_path(friend: friend.id)%>
+                      <%= button_to 'Decline', decline_friend_path(friend: friend.id)%>
+                      <% end %>
+                    </p>
+                  </div>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
           <% end %>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
       </div>
-    </div>
-  </div>
-  <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-  <% end %>
+    </header>
+  </body>
 
 
   <%= yield %>
