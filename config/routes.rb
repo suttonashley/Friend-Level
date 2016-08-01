@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root 'sessions#new'
 
+  post '/add_friend' => 'friendships#add_friend'
+
   get 'friendships/create' => 'friendships#create'
   get 'friendships' => 'friendships#index'
   get 'friendships/destroy' => 'friendships#destroy'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
   post '/accept_friend' => 'friendships#accept_friend'
   post '/decline_friend' => 'friendships#decline_friend'
-
 end

@@ -13,8 +13,8 @@ class Friendship < ApplicationRecord
   def self.request(user, friend)
     unless user == friend || Friendship.exists?(user, friend)
       transaction do
-        create(:user => user, :friend => friend, :status => :pending)
-        create(:user => friend, :friend => user, :status => :requested)
+        create(:user => user, :friend => friend, :status => :requested)
+        create(:user => friend, :friend => user, :status => :pending)
       end
     end
   end
@@ -33,10 +33,9 @@ class Friendship < ApplicationRecord
   end
 
   def self.exists?(user, friend)
-    user_friendship   = Friendship.where(:user_id => user.id, :friend_id => friend.id).first
-    friend_friendship = Friendship.where(:user_id => friend.id, :friend_id => user.id).first
-
-    return !user_friendship.nil? && !friend_friendship.nil?
+    user_friendship   = Friendship.where(user_id: user.id, friend_id: friend.id).first
+    friend_friendship = Friendship.where(user_id: friend.id, friend_id: user.id).first
+    !user_friendship.nil? && !friend_friendship.nil?
   end
 
   def self.decline(user, friend)

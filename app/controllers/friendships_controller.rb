@@ -22,6 +22,10 @@ class FriendshipsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def add_friend
+    Friendship.request(current_user, User.find(params[:friend]))
+  end
+
 private
 
   def friendships_params
