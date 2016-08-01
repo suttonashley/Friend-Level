@@ -20,7 +20,7 @@ user2 = User.create(
 )
 
 10.times do
-  User.create(username: Faker::Internet.user_name, password: "password")
+  User.create(username: Faker::Internet.user_name, password: "password", password_confirmation: "password")
 end
 
 
