@@ -17,6 +17,11 @@ class FriendshipsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def decline_friend
+    Friendship.decline(current_user.id, params[:friend])
+    redirect_to user_path(current_user)
+  end
+
 private
 
   def friendships_params

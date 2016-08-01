@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   post '/accept_friend' => 'friendships#accept_friend'
+  post '/decline_friend' => 'friendships#decline_friend'
 
 end

@@ -47,12 +47,16 @@ class Friendship < ApplicationRecord
   end
 
   def self.decline_one_side(user, friend)
-    request = find_by_user_id_and_friend_id(user.id, friend.id)
+    request = find_by(user_id: user, friend_id: friend)
     request.status = :declined
     request.save!
   end
 
   def accepted_friends
     Friendship.where(:status => :accepted)
+  end
+
+  def decline_friends
+    Friendship.where(:status => :declined)
   end
 end

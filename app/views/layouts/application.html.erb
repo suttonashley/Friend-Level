@@ -33,11 +33,14 @@
         <div class="modal-body">
           <% current_user.friends.each do |friend| %>
           <p>
+            <div>
             <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
             <h2><%= friend.username %></h2>
             <%= button_to 'Accept', accept_friend_path(friend: friend.id)%>
+            <%= button_to 'Decline', decline_friend_path(friend: friend.id)%>
             <% end %>
           </p>
+        </div>
           <% end %>
         </div>
         <div class="modal-footer">
