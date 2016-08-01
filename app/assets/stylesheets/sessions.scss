@@ -1,3 +1,22 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+
+.sessions {
+  background: url("http://images.boomsbeat.com/data/images/full/2164/finger-art_1-jpg.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.login {
+  text-align: left;
+  margin-top: 15em;
+  margin-left: 15em;
+}
+
+.log {
+  text-align: left;
+  margin-top: 3em;
+  // margin-left: 0em;
+}

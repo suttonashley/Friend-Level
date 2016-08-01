@@ -1,3 +1,207 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.users, .show {
+  background: white;
+}
+
+// .users, .create {
+//   background: url("https://s-media-cache-ak0.pinimg.com/736x/3a/3d/ca/3a3dca8b79e07b5175e0adde7d4b11aa.jpg") fixed no-repeat;
+//   background-size: cover;
+// }
+
+.friendl {
+  text-align: center;
+  // font-family: 'Merienda One', cursive;
+  margin-top: 2em;
+  font-size: 5em;
+}
+
+// Sign-In Page
+.signup {
+  text-align: center;
+  // font-family: 'Merienda One', cursive;
+  margin-top: 2em;
+}
+
+// Tasks from the Task.scss
+
+.postit {
+  background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  // border: solid;
+  max-width: 275px;
+  padding: 4.1em;
+  padding-top: 3.2em;
+  text-align: center;
+  // margin:auto;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.title {
+  font-size: 1.3em;
+}
+
+// User Index Page
+.userlist {
+  text-align: center;
+}
+
+// Tasks Feed
+.tasksfeed {
+  margin-top: 6em;
+  margin-left: .5em;
+}
+
+// Tasks Feed
+// Friend Index
+.user {
+  text-align: center;
+  text-decoration: none;
+}
+
+// Headers
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.3em;
+  // color: #fff;
+  // text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  // font-weight: bold;
+}
+
+#logo:hover {
+  // color: #fff;
+  text-decoration: none;
+}
+
+.header {
+  font-size: 1em;
+  // margin-right: 3em;
+  text-align: right;
+}
+
+// Profile Page
+
+.profile {
+    margin-top: 6em;
+}
+
+.container {
+  border: solid;
+}
+
+.sec1 {
+  // border: solid;
+  float: left;
+  width: 35%;
+  margin: .15em;
+  text-align: center;
+  font-family: serif;;
+  font-size: 2em;
+}
+
+.sec2 {
+  background: #ff4000;
+  border: solid .2em;
+  float: right;
+  width: 61%;
+  margin: .15em;
+  text-align: center;
+}
+
+.friends {
+  float: left;
+  width: 47%;
+  border-right: dotted;
+}
+
+.crowns {
+float: right;
+width: 47%;
+}
+
+.kinds {
+  background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  // border: solid;
+  max-width: 275px;
+  padding: 4.1em;
+  text-align: center;
+  margin: 2em;
+  float: inherit;
+  // margin-top: 1em;
+}
+
+.title2 {
+    font-size: 1.3em;
+}
+
+.myopps {
+  text-align: center;
+  font-family: 'Merienda One', cursive;
+  font-size: 3em;
+  padding: .8em;
+  clear: both;
+}
+
+.mykinds {
+  text-align: center;
+  font-family: 'Merienda One', cursive;
+  font-size: 3em;
+  padding: .8em;
+  margin-top: 3em;
+  clear: both;
+}
+
+// Search Bar
+
+.box{
+  margin: 100px auto;
+  margin-bottom: 50px;
+  width: 300px;
+  height: 50px;
+}
+
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container-1 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  // color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 15px;
+}
+
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background: Grey;
+  }

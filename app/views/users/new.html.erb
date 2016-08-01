@@ -1,10 +1,33 @@
-<h1>Signup!</h1>
+<!--Sign up form for :user that includes username and password-->
 
-<%= form_for :user, url: '/users' do |f| %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <!-- <%= link_to "sample app", '#', id: "logo" %> -->
+    <%= link_to "Friend Level", '#', id: "logo"%>
+    <%= link_to 'Login', '/login', id: "logo"%>
+</header>
 
-  Name: <%= f.text_field :username %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+<div class=
+"friendl"><p>Friend Level</p>
+</div>
 
-<% end %>
+<div class="signup animated infinite tada"><h2>Signup!</h2>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6 col-xs-8 col-md-offset-3 col-xs-offset-2">
+    <%= form_for :user, url: '/users' do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username, class: 'form-control'  %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control'  %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'form-control'  %>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>
