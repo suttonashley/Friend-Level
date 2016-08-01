@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :friendships
 
 
   root 'sessions#new'
 
   post '/add_friend' => 'friendships#add_friend'
 
-  get 'friendships/create' => 'friendships#create'
-  get 'friendships' => 'friendships#index'
-  get 'friendships/destroy' => 'friendships#destroy'
+  # get 'friendships/create' => 'friendships#create'
+  # get 'friendships' => 'friendships#index'
+  # delete 'friendships/destroy' => 'friendships#destroy'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
