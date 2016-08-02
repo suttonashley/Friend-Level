@@ -12,13 +12,16 @@ Rails.application.routes.draw do
   # get 'friendships' => 'friendships#index'
   # delete 'friendships/destroy' => 'friendships#destroy'
 
-  get '/login' => 'sessions#new'
+  get '/login'  => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  get '/search' => 'users#index'
+  post '/search'=> 'users#index'
 
-  post '/accept_friend' => 'friendships#accept_friend'
+
+  post '/accept_friend'  => 'friendships#accept_friend'
   post '/decline_friend' => 'friendships#decline_friend'
 end
