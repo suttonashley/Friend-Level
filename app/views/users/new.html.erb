@@ -1,13 +1,4 @@
 <!--Sign up form for :user that includes username and password-->
-
-
-<header class="navbar navbar-fixed-top navbar-inverse">
-    <!-- <%= link_to "sample app", '#', id: "logo" %> -->
-    <%= link_to "Friend Level", '#', id: "logo"%>
-    <%= link_to 'Login', '/login', id: "logo"%>
-</header>
-
-
 <div class="friendl">
   <p>
     Friend Level
@@ -21,16 +12,16 @@
   <div class="col-md-6 col-xs-8 col-md-offset-3 col-xs-offset-2">
     <%= form_for :user, url: '/users' do |f| %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username, class: 'form-control'  %>
+    <%= f.label :username %>
+    <%= f.text_field :username, class: 'form-control'  %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control'  %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control'  %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control'  %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control'  %>
 
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
