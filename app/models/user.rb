@@ -1,7 +1,14 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :friendships
-  has_many :friends, :through => :friendships
+  has_many :friends,
+           :through => :friendships
+
+  has_many :tasks
+  has_many :missions,
+           :through => :mission_doers,
+           :class_name => 'Task',
+           :foreign_key => 'mission_id'
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :password, confirmation: true, presence: true, length: { in: 6..20 }

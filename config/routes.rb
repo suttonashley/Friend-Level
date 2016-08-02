@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'mission_doer/create'
+
+  get 'mission_doer/index'
+
+  get 'mission_doer/destroy'
+
+  get 'tasks/create'
+
+  get 'tasks/index'
+
+  get 'tasks/destroy'
+
   resources :users
   resources :friendships
 
