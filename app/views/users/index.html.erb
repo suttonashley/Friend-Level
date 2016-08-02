@@ -5,9 +5,9 @@
 
 <h2>Results</h2>
 <% @users.each do |u|%>
-<% if u.friends.map(&:id).include?(current_user.id) %>
-  <%= link_to u.username, u %>
-<% else %>
-  <%= u.username %><%= button_to 'Add+', add_friend_path(friend: u.id) %>
-<% end %>
+  <% if u.friends.map(&:id).include?(current_user.id) %>
+    <%= link_to u.username, u %>
+  <% else %>
+    <%= u.username %><%= button_to 'Add+', add_friend_path(friend: u.id) %>
+  <% end %>
 <% end %>

@@ -28,19 +28,21 @@
   <div row>
     <div class="col-s-12">
       <% if current_user %>
-      <%= link_to "Friend Level", user_path(current_user), id: "logo"%>
-      Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
-      <!-- Button trigger modal for Friend Requests -->
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Friend Requests
-      </button>
-      <%= form_tag search_path do %>
-      <%= search_field_tag :term %>
-      <%= submit_tag "Go!" %>
-      <% end %>
+        <%= link_to "Friend Level", user_path(current_user), id: "logo"%>
+        Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+        <!-- Button trigger modal for Friend Requests -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Friend Requests
+        </button>
+        <div class="search-bar">
+        <%= form_tag search_path do %>
+        <%= search_field_tag :term %>
+        <%= submit_tag "Go!" %>
+        <% end %>
+      </div>
       <% else %>
-      <%= link_to "Friend Level", root_path, id: "logo"%>
-      <%= link_to 'Signup', signup_path, id: "logo"%>
+        <%= link_to "Friend Level", root_path, id: "logo"%>
+        <%= link_to 'Signup', signup_path, id: "logo"%>
       <% end %>
     </div>
   </div>
@@ -48,33 +50,33 @@
 
 <!-- Modal for Friend Requests-->
 <% if current_user %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Your Friend Requests</h4>
-      </div>
-      <div class="modal-body">
-        <% current_user.friends.each do |friend| %>
-        <p>
-          <div>
-            <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
-            <h2><%= friend.username %></h2>
-            <%= button_to 'Accept', accept_friend_path(friend: friend.id)%>
-            <%= button_to 'Decline', decline_friend_path(friend: friend.id)%>
-            <% end %>
-          </p>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Your Friend Requests</h4>
         </div>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <div class="modal-body">
+          <% current_user.friends.each do |friend| %>
+          <p>
+            <div>
+              <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
+              <h2><%= friend.username %></h2>
+              <%= button_to 'Accept', accept_friend_path(friend: friend.id)%>
+              <%= button_to 'Decline', decline_friend_path(friend: friend.id)%>
+              <% end %>
+            </p>
+          </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <% end %>
 
 <%= yield %>

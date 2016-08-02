@@ -4,8 +4,10 @@
 
 @charset "UTF-8";
 
-.sessions {
-  background: url("http://images.boomsbeat.com/data/images/full/2164/finger-art_1-jpg.jpg") no-repeat fixed;
+body.sessions {
+  background-image: url("http://images.boomsbeat.com/data/images/full/2164/finger-art_1-jpg.jpg");
+  background-repeat: no-repeat;
+  background-position: fixed;
   background-size: cover;
 }
 
