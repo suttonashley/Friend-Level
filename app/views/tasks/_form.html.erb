@@ -1,17 +1,29 @@
-<%= form_for(@task) do |f| %>
 
-<%= f.label :title %>:
-<%= f.text_field :title %>
+<div class="tasknew">
 
-<%= f.label :details %>:
-<%= f.text_field :details %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-<%= f.label :due_date%>:
-<%= f.datetime_field :due_date %>
+    <%= form_for(@task) do |f| %>
 
-<%= f.label :points %>:
-<%= f.number_field :points %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %><br>
 
-<%= f.submit "Submit" %>
+    <%= f.label :details %>
+    <%= f.text_field :details, class: "form-control" %><br>
 
-<% end %>
+
+    <%= f.label :due_date %>
+    <%= f.datetime_field :due_date, class: "form-control" %><br>
+
+
+    <%= f.label :points %>
+    <%= f.select "points", options_for_select((1..10).step(1))%><br>
+
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
+
+</div>

@@ -4,7 +4,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.task.build()
+    @task = current_user.tasks.build(task_params)
+    @task.save
+    redirect_to current_user
   end
 
   def index
