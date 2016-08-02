@@ -6,9 +6,7 @@ class User < ApplicationRecord
 
   has_many :tasks
   has_many :missions,
-           :through => :mission_doers,
-           :class_name => 'Task',
-           :foreign_key => 'mission_id'
+           :class_name => 'Task'
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :password, confirmation: true, presence: true, length: { in: 6..20 }

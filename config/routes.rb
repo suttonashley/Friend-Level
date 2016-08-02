@@ -1,28 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'mission_doer/create'
-
-  get 'mission_doer/index'
-
-  get 'mission_doer/destroy'
-
-  get 'tasks/create'
-
-  get 'tasks/index'
-
-  get 'tasks/destroy'
-
   resources :users
   resources :friendships
+  resources :tasks
 
+  resources :users do
+    resources :tasks
+  end
 
   root 'sessions#new'
 
   post '/add_friend' => 'friendships#add_friend'
-
-  # get 'friendships/create' => 'friendships#create'
-  # get 'friendships' => 'friendships#index'
-  # delete 'friendships/destroy' => 'friendships#destroy'
 
   get '/login'  => 'sessions#new'
   post '/login' => 'sessions#create'
