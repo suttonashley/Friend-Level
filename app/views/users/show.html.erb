@@ -8,25 +8,27 @@
 <h2><%= @user.username %>'s current friends:</h2>
 
 <% @user.accepted_friends.each do |friend| %>
+
     @<%= friend.username %>
   <% if current_user == @user %>
     <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %>
   <% end %>
 <% end %>
 
-
 <ul>
   <h1>Here are your tasks:</h1>
   <% @user.tasks.each do |task| %>
-  <li>
-    <%= task.title %>
-    <%= task.details %>
-    <%= task.due_date %>
-    <%= task.points %>
+
+    <div class="postit col-md-4 col-sm-6" >
+    <div class="title"><b><%= task.title %><br></b></div>
+    <%= task.details %><br>
+    <%= task.due_date.localtime.strftime("%b. %d, %Y - %I:%M %p") %><br>
+    <b><%= task.points %></b>
     <% if current_user.id == task.user_id%>
       (<%= link_to 'Edit', edit_user_task_path(current_user, task) %>)
       (<%= link_to 'Delete', task, :method => :delete %>)
     <% end %>
-  </li>
+  </div>
+  
   <% end %>
 </ul>
