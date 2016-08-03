@@ -7,6 +7,10 @@
   background: white;
 }
 
+
+body.search {
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/ce/35/aa/ce35aa0a2f04d59def57db05096fe1b0.jpg") fixed no-repeat;
+}
 // .users, .create {
 //   background: url("https://s-media-cache-ak0.pinimg.com/736x/3a/3d/ca/3a3dca8b79e07b5175e0adde7d4b11aa.jpg") fixed no-repeat;
 //   background-size: cover;
@@ -83,7 +87,7 @@
   // color: #fff;
   // text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding: 1em;
   // font-weight: bold;
 }
 
@@ -94,82 +98,22 @@
 
 .header {
   font-size: 1em;
-  // margin-right: 3em;
   text-align: right;
+  padding: 1em;
+  padding-right: 2em;
+  padding-top: 1.4em;
+
 }
 
-// Profile Page
-
-.profile {
-    margin-top: 6em;
-}
-
-.container {
-  border: solid;
-}
-
-.sec1 {
-  // border: solid;
+.dropdown {
   float: left;
-  width: 35%;
-  margin: .15em;
-  text-align: center;
-  font-family: serif;;
-  font-size: 2em;
-}
-
-.sec2 {
-  background: #ff4000;
-  border: solid .2em;
-  float: right;
-  width: 61%;
-  margin: .15em;
-  text-align: center;
-}
-
-.friends {
-  float: left;
-  width: 47%;
-  border-right: dotted;
-}
-
-.crowns {
-float: right;
-width: 47%;
-}
-
-.kinds {
-  background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
-  background-size: 250px 250px;
-  background-repeat: no-repeat;
-  // border: solid;
-  max-width: 275px;
-  padding: 4.1em;
-  text-align: center;
-  margin: 2em;
-  float: inherit;
-  // margin-top: 1em;
-}
-
-.title2 {
-    font-size: 1.3em;
-}
-
-.myopps {
-  text-align: center;
-  font-family: 'Merienda One', cursive;
-  font-size: 3em;
-  padding: .8em;
-  clear: both;
-}
-
-.mykinds {
-  text-align: center;
-  font-family: 'Merienda One', cursive;
-  font-size: 3em;
-  padding: .8em;
-  margin-top: 3em;
-  clear: both;
+  margin-right: 10px;
+  font-size: 1.3em;
+  // color: #fff;
+  // text-transform: uppercase;
+  letter-spacing: -1px;
+  padding: 1em;
+  // font-weight: bold;
 }
 
 // Search Bar
