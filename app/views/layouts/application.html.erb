@@ -25,22 +25,21 @@
 <body>
 <!-- static nav bar -->
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div row>
-    <div class="col-s-12">
+  <div>
+    <div class="col-s-12" class="navigation-station">
       <% if current_user %>
         <%= link_to "FRIEND LEVEL", user_path(current_user), id: "logo"%>
         Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
         <!-- Button trigger modal for Friend Requests -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-primary search" data-toggle="modal" data-target="#myModal">
           Friend Requests
         </button>
         <!-- search bar -->
-
-        <%= form_tag search_path do %>
-        <%= search_field_tag :term,'', class: "search-bar" %>
-        <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
+        <%= form_tag search_path, class:'search' do %>
+          <%= search_field_tag :term,'', class: "search", placeholder:'Search for the ultimate' %>
+          <%= submit_tag "Go!", class: "btn btn-primary btn-sm search" %>
         <% end %>
-
+        <%= link_to "Create New Kindness", new_task_path %>
       <% else %>
         <%= link_to "Friend Level", root_path, id: "logo"%>
         <%= link_to 'Signup', signup_path, id: "logo"%>
@@ -79,7 +78,8 @@
     </div>
   </div>
 <% end %>
-
+<div id='page-container'>
 <%= yield %>
+</div>
 </body>
 </html>
