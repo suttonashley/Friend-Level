@@ -25,9 +25,18 @@ class Task < ApplicationRecord
  end
 
   def accept(creator)
-    if self.user_id == creator.id
+    if self.user_id == creator.id && self.status == :pending
       self.status = :accepted
       self.save
     end
   end
+
+  def decline(creator)
+    if self.user_id == creator.id && self.status == :pending
+      self.status = :declined
+      self.save
+    end
+  end
+
+
 end
