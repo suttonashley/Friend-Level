@@ -3,18 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.users, .show {
+users, .show {
   background: white;
 }
 
-
-body.search {
-  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/ce/35/aa/ce35aa0a2f04d59def57db05096fe1b0.jpg") fixed no-repeat;
+body.signuppic {
+  background: url("http://woordup.com/wp-content/uploads/2011/01/finger-people-alone-smiling.jpg
+") no-repeat fixed;
+  background-size: cover;
 }
-// .users, .create {
-//   background: url("https://s-media-cache-ak0.pinimg.com/736x/3a/3d/ca/3a3dca8b79e07b5175e0adde7d4b11aa.jpg") fixed no-repeat;
-//   background-size: cover;
-// }
 
 .friendl {
   text-align: center;
@@ -80,15 +77,26 @@ body.search {
 
 // Headers
 
+#color {
+  float: left;
+  margin-right: 10px;
+  font-size: .9em;
+  letter-spacing: -1px;
+  padding: 1em;
+  color: black;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.3em;
+  font-size: 1.4em;
   // color: #fff;
   // text-transform: uppercase;
   letter-spacing: -1px;
-  padding: 1em;
+  padding-top: 9px;
   // font-weight: bold;
+  margin-left: .5em;
+  margin-top: .1em;
 }
 
 #logo:hover {
@@ -99,26 +107,39 @@ body.search {
 .header {
   font-size: 1em;
   text-align: right;
-  padding: 1em;
-  padding-right: 2em;
-  padding-top: 1.4em;
+  // padding: 1em;
+  // padding-right: 2em;
+  // padding-top: 1.4em;
 
+}
+
+#dropdownMenu1 {
+  margin-left: 1em;
+  margin-top: .8em;
+}
+
+.test2 {
+  font-size: 1.5em;
+  color: black;
+  margin-left: .5em;
 }
 
 .dropdown {
   float: left;
   margin-right: 10px;
   font-size: 1.3em;
-  // color: #fff;
-  // text-transform: uppercase;
   letter-spacing: -1px;
-  padding: 1em;
   // font-weight: bold;
 }
 
 // Search Bar
 .search-bar {
   border-radius: .5em;
+}
+
+.test {
+  padding-right: 2em;
+  padding-top: .5em;
 }
 
 // Log-in Page
