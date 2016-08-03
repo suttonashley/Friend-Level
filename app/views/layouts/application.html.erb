@@ -31,25 +31,16 @@
         <%= link_to "FRIEND LEVEL", user_path(current_user), id: "logo"%>
         Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
         <!-- Button trigger modal for Friend Requests -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
           Friend Requests
         </button>
         <!-- search bar -->
 
-        <!-- <form class="navbar-form" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search...">
-          </div>
-          <button type="submit" class="btn btn-primary">Find a Friend</button>
-        </form> -->
-
-
-        <div class="search-bar">
         <%= form_tag search_path do %>
-        <%= search_field_tag :term %>
-        <%= submit_tag "Go!" %>
+        <%= search_field_tag :term,'', class: "search-bar" %>
+        <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
         <% end %>
-      </div>
+
       <% else %>
         <%= link_to "Friend Level", root_path, id: "logo"%>
         <%= link_to 'Signup', signup_path, id: "logo"%>

@@ -19,7 +19,7 @@
   font-size: 5em;
 }
 
-// Sign-In Page
+// Sign-Up Page
 .signup {
   text-align: center;
   // font-family: 'Merienda One', cursive;
@@ -46,8 +46,18 @@
   font-size: 1.3em;
 }
 
-// User Index Page
+// User Index Search Page
+.looking {
+  text-align: center;
+  margin-top: 7em;
+}
+
 .userlist {
+  text-align: center;
+}
+
+.results {
+  font-size: 5em;
   text-align: center;
 }
 
@@ -163,45 +173,14 @@ width: 47%;
 }
 
 // Search Bar
-
-// .box{
-//   margin: 100px auto;
-//   margin-bottom: 50px;
-//   width: 100px;
-//   height: 10px;
-// }
-
-.container-1{
-  width: 300px;
-  vertical-align: middle;
-  white-space: nowrap;
-  position: relative;
+.search-bar {
+  border-radius: .5em;
 }
 
-.container-1 input#search{
-  width: 250px;
-  height: 40px;
-  background: blue;
-  border: none;
-  font-size: 10pt;
-  float: left;
-  // color: #63717f;
-  padding-left: 45px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 15px;
-}
+// Log-in Page
 
-.container-1 .icon{
-  position: absolute;
-  top: 50%;
-  margin-left: 17px;
-  margin-top: 17px;
-  z-index: 1;
-  color: #4f5b66;
+.type-bar {
+  width: 20em;
+  border-radius: .5em;
+  height: 2.5em;
 }
-
-.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
-    outline:none;
-    background: Grey;
-  }

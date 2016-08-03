@@ -2,20 +2,24 @@
 
 <body class="sessions">
   <div class ="login">
+
     <div class="row">
       <div class="col-md-6 col-xs-8 col-md-offset-3 col-xs-offset-2">
+
         <h1>Login</h1>
+
         <!--login form-->
         <%= form_tag('/login', class: 'form-inline') do %>
         <div class="form-group">
           <%= label_tag :username %><br>
-          <%= text_field_tag :username %>
-          <br>
+          <%= text_field_tag :username,'', class: "type-bar" %>
+          <br><br>
           <%= label_tag :password %><br>
-          <%= password_field_tag :password %><br>
-          <br>
-          <%= submit_tag "Submit", class: "btn btn-primary" %>
+          <%= password_field_tag :password,'', class: "type-bar" %><br>
+          <br><br>
+          <%= submit_tag "Submit", class: "btn btn-primary"%>
         <% end %>
+
         </div>
       </div>
     </div>

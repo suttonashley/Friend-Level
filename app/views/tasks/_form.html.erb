@@ -1,4 +1,8 @@
 
+<div class="createtask">
+<h2>Create a new Task.</h2>
+</div>
+
 <div class="tasknew">
 
 <div class="row">
@@ -12,15 +16,13 @@
     <%= f.label :details %>
     <%= f.text_field :details, class: "form-control" %><br>
 
-
     <%= f.label :due_date %>
     <%= f.datetime_field :due_date, class: "form-control" %><br>
 
-
     <%= f.label :points %>
-    <%= f.select "points", options_for_select((1..10).step(1))%><br>
+    <%= f.select "points", options_for_select((1..10).step(1))%><br><br>
 
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <%= f.submit "Create Task", class: "btn btn-primary" %>
 
     <% end %>
   </div>
