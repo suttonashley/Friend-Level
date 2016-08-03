@@ -28,8 +28,25 @@
     <% if current_user.id == task.user_id%>
       (<%= link_to 'Edit', edit_user_task_path(current_user, task) %>)
       (<%= link_to 'Delete', task, :method => :delete %>)
+      <% else %>
+      <%= link_to 'Pick up this task', request_task_path(current_user, task), :method => :post %>
     <% end %>
     </div>
   </div>
+  <% end %>
+</ul>
+
+
+<h1> The Tasks You've Picked Up </h1>
+<ul>
+  <% if current_user %>
+    <% @user_tasks.each do |task| %>
+    <li>
+      <%= task.title %>
+      <%= task.details %>
+      <%= task.due_date %>
+      <%= task.points %>
+    </li>
+    <% end %>
   <% end %>
 </ul>
