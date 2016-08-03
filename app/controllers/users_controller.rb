@@ -15,14 +15,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user_tasks = current_user.tasks.where(status: "accepted", doer_id: current_user.id)
   end
 
   def index
     @users = User.where("username LIKE ?", "#{params[:term]}")
-
   end
-
-
 
 private
 

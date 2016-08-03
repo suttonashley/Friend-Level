@@ -27,10 +27,28 @@ class TasksController < ApplicationController
     redirect_to current_user
   end
 
+  def request_task
+    @task = Task.find(params[:task_id])
+    @task.request(User.find(params[:doer_id]))
+    redirect_to current_user
+  end
+
+  def accept_task
+    @task = Task.find(params[:task_id])
+    @task.accept(current_user)
+    redirect_to current_user
+  end
+
+  def decline_task
+    @task = Task.find(params[:task_id])
+    @task.accept(current_user)
+    redirect_to current_user
+  end
+
   private
 
   def set_task
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:task_id])
   end
 
   def task_params
