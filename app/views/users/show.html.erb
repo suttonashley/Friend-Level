@@ -1,10 +1,15 @@
 <h1><%= @user.username %></h1>
+
+
+<!-- <div class="curfriends">
+  <div class="col-md-4 col-sm-6" > -->
 <% unless current_user == @user || current_user.is_friends_with?(@user) %>
   <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
 <% end %>
+  <!-- </div>
+</div> -->
 
-
-
+<section>
 <h2><%= @user.username %>'s current friends:</h2>
 
 <% @user.accepted_friends.each do |friend| %>
@@ -14,7 +19,9 @@
     <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %>
   <% end %>
 <% end %>
+</section>
 
+<section>
 <ul>
   <h1>Here are your tasks:</h1>
   <% @user.tasks.each do |task| %>
@@ -35,18 +42,24 @@
   </div>
   <% end %>
 </ul>
+</section>
 
-
+<section>
 <h1> The Tasks You've Picked Up </h1>
 <ul>
   <% if current_user %>
     <% @user_tasks.each do |task| %>
+    <div class="postit col-md-4 col-sm-6" >
+    <div class="taskspicked">
     <li>
-      <%= task.title %>
-      <%= task.details %>
-      <%= task.due_date %>
-      <%= task.points %>
+      <div class="title"><b><%= task.title %><br></b></div>
+      <%= task.details %><br>
+      <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br>
+      <b>Worth <%= task.points %>Point(s)</b><br>
     </li>
     <% end %>
+    </div>
+    </div>
   <% end %>
 </ul>
+</section>
