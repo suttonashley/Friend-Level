@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   post '/decline_friend' => 'friendships#decline_friend'
 
   post '/users/:doer_id/request_task/:task_id' => "tasks#request_task", as: "request_task"
+  post 'accept_task/:task_id' => 'tasks#accept_task', as: "accept_task"
 end

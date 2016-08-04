@@ -15,7 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user_tasks = current_user.tasks.where(status: "accepted", doer_id: current_user.id)
+    @user_accepted_tasks = current_user.tasks.where(status: "accepted", user_id: current_user.id)
+    @user_pending_tasks = current_user.tasks.where(status: "pending", user_id: current_user.id)
   end
 
   def index

@@ -25,8 +25,10 @@ class Task < ApplicationRecord
  end
 
   def accept(creator)
-    if self.user_id == creator.id && self.status == :pending
+    # debugger;
+    if self.user_id == creator.id && self.status == "pending"
       self.status = :accepted
+      logger.debug("*************SUCCES***********")
       self.save
     end
   end
