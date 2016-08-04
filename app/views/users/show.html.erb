@@ -1,15 +1,12 @@
 <h1><%= @user.username %></h1>
 
 
-<!-- <div class="curfriends">
-  <div class="col-md-4 col-sm-6" > -->
 <% unless current_user == @user || current_user.is_friends_with?(@user) %>
   <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
 <% end %>
-  <!-- </div>
-</div> -->
 
-<section>
+
+<div>
 <h2><%= @user.username %>'s current friends:</h2>
 
 <% @user.accepted_friends.each do |friend| %>
@@ -19,11 +16,12 @@
     <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %>
   <% end %>
 <% end %>
-</section>
+</div>
 
-<section>
+<class ="container">
+<h1>Here are your tasks:</h1>
+
 <ul>
-  <h1>Here are your tasks:</h1>
   <% @user.tasks.each do |task| %>
 
   <div class="postit col-md-4 col-sm-6" >
@@ -37,18 +35,19 @@
       (<%= link_to 'Delete', task, :method => :delete %>)
       <% else %>
       <%= link_to 'Pick up this task', request_task_path(current_user, task), :method => :post %>
+      <%= link_to 'Approve this task', accept_task_path(task.id), :method => :post %>
     <% end %>
     </div>
   </div>
   <% end %>
 </ul>
-</section>
+</div>
 
-<section>
+<div>
 <h1> The Tasks You've Picked Up </h1>
 <ul>
   <% if current_user %>
-    <% @user_tasks.each do |task| %>
+    <% @user.tasks.each do |task| %>
     <div class="postit col-md-4 col-sm-6" >
     <div class="taskspicked">
     <li>
@@ -62,4 +61,20 @@
     </div>
   <% end %>
 </ul>
-</section>
+</div>
+
+<div class="container">
+<h1> Approved and Now I Must Execute </h1>
+  <ul>
+    <% if current_user %>
+      <% @user_accepted_tasks.each do |task| %>
+      <li>
+        <%= task.title %>
+        <%= task.details %>
+        <%= task.due_date %>
+        <%= task.points %>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
