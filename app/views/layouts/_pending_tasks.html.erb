@@ -11,6 +11,7 @@
             <% if current_user %>
               <% pending_tasks.each do |task| %>
               <li>
+                <%= task.doer.username %>
                 <%= task.title %>
                 <%= task.details %>
                 <%= task.due_date %>
