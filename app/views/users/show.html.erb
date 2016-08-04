@@ -18,7 +18,7 @@
 <% end %>
 </div>
 
-<class ="container">
+<!-- <div class ="container"> -->
 <h1>Here are your tasks:</h1>
 
 <ul>
@@ -41,25 +41,29 @@
   </div>
   <% end %>
 </ul>
-</div>
+<!-- </div> -->
 
-<div class= "container">
-<h1> The Tasks You've Picked Up </h1>
+
+<div class="tasksupicked"><h1> The Tasks You've Picked Up </h1></div>
+<!-- <div class= "container"> -->
 <!-- <ul> -->
   <% if current_user %>
     <% @user.tasks.each do |task| %>
     <div class="postit col-md-4 col-sm-6" >
-    <div=class="taskspicked">
+    <div class="taskspicked">
       <!-- <li> -->
       <div class="title"><b><%= task.title %><br></b></div>
       <%= task.details %><br>
       <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br>
-      <b>Worth <%= task.points %>Point(s)</b><br>
+      <b>Worth <%= task.points %> Point(s)</b><br>
+    </div>
       <!-- <li> -->
     </div>
+
     <% end %>
-    </div>
+
   <% end %>
+<!-- </div> -->
 <!-- </ul> -->
 </div>
 
