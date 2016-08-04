@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 
   post '/users/:doer_id/request_task/:task_id' => "tasks#request_task", as: "request_task"
   post 'accept_task/:task_id' => 'tasks#accept_task', as: "accept_task"
+  post 'decline_task/:task_id' => 'tasks#decline_task', as: "decline_task"
 end

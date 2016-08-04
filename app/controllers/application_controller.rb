@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :pending_tasks
+  helper_method :current_user, :pending_tasks,
 
 
   def current_user
