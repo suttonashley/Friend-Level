@@ -8,8 +8,13 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params.merge({user_id: current_user.id}))
-    @task.save
-    redirect_to current_user
+    p @task.errors.details[:title]
+    if @task.save
+      redirect_to current_user
+    else
+      flash[:error] = "Cannot be in the past. Try again, friend."
+      redirect_to new_task_path
+    end
   end
 
   def edit

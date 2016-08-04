@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :pending_tasks
+  helper_method :current_user, :pending_tasks,
 
 
   def current_user
@@ -15,13 +15,16 @@ class ApplicationController < ActionController::Base
   def pending_tasks
     current_user.tasks.where(status: "pending", user_id: current_user.id)
   end
+  # 
+  # def error
+  #   if flash[:error]
+  #     "You are wrong"
+  # end
 
 private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
+
 end
