@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, only: [:update]
+  before_action :set_task_with_user, only: [:edit]
 
   def new
     @task = Task.new
@@ -23,6 +24,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
     @task.destroy
     redirect_to current_user
   end
@@ -48,7 +50,11 @@ class TasksController < ApplicationController
   private
 
   def set_task
-    @task = current_user.tasks.find(params[:task_id])
+    @task = current_user.tasks.find(params[:id])
+  end
+
+  def set_task_with_user
+    @task = Task.find_by(user_id: params[:user_id], id: params[:id])
   end
 
   def task_params
