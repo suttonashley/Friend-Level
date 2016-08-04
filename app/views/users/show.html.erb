@@ -45,39 +45,40 @@
       <% end %>
     </ul>
   </div>
-
-    <div class= "container">
-      <h1> The Tasks You've Picked Up </h1>
+<!-- Tasks You've Picked Up -->
+    <!-- <div class= "container">
+      <h1> The Tasks You've Picked Up </h1> -->
       <!-- <ul> -->
-      <% if current_user %>
-        <% @user.tasks.each do |task| %>
-          <div class="postit col-md-4 col-sm-6" >
+      <%# if current_user %>
+        <%# @user.tasks.each do |task| %>
+          <!-- <div class="postit col-md-4 col-sm-6" >
             <div class="taskspicked">
-              <!-- <li> -->
+              <li>
               <div class="title">
-                <b>
-                  <%= task.title %><br>
-                </b>
-              </div>
-              <%= task.details %><br>
-              <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br>
-              <b>
-                Worth <%= task.points %>Point(s)<br>
-              </b>
+                <b> -->
+                  <!-- <%#= task.title %><br> -->
+                <!-- </b>
+              </div> -->
+              <!-- <#%= task.details %><br> -->
+              <!-- <#%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br> -->
+              <!-- <b> -->
+                <!-- Worth <#%= task.points %>Point(s)<br> -->
+              <!-- </b> -->
               <!-- <li> -->
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+            <!-- </div>
+          </div> -->
+        <%# end %>
+      <%# end %>
     <!-- </ul> -->
-    </div>
+    <!-- </div> -->
 
   <div class="container">
-    <h1> Approved and Now I Must Execute </h1>
+    <h1> Must Execute </h1>
     <ul>
       <% if current_user %>
         <% @user_accepted_tasks.each do |task| %>
           <li>
+            For: <b><%= task.creator.username %></b>
             <%= task.title %>
             <%= task.details %>
             <%= task.due_date %>
