@@ -8,7 +8,7 @@ users, .show {
 }
 
 body.signuppic {
-  background: url("") no-repeat fixed;
+  background: url("http://hdwallpapergirls.com/assets/large/lol-fingers-wallpaper.jpg") no-repeat fixed;
   background-size: cover;
 }
 
@@ -33,9 +33,10 @@ body .modal {
 }
 
 .friendl {
-  text-align: center;
+  text-align: left;
   // font-family: 'Merienda One', cursive;
   margin-top: 2em;
+  margin-left: 1.5em;
   font-size: 5em;
 }
 
@@ -44,7 +45,13 @@ body .modal {
   text-align: center;
   // font-family: 'Merienda One', cursive;
   margin-top: 2em;
+  margin-right: 60em;
 }
+
+.signuprow {
+  margin-top: 2em;
+}
+
 
 // Tasks from the Task.scss
 
