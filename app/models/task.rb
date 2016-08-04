@@ -8,6 +8,11 @@ class Task < ApplicationRecord
              :foreign_key => 'doer_id',
              :optional => true
 
+  validates :title, presence: true, length: { maximum: 14 }
+  validates :details, length: { maximum: 23 }
+  validates :due_date, presence: true
+  validate :not_past_date
+
 
   enum status: {
      requested: 'requested',
@@ -36,6 +41,10 @@ class Task < ApplicationRecord
       self.status = :declined
       self.save
     end
+  end
+
+  def not_past_date
+    errors.add(:due_date, 'error message') unless self.due_date.future?
   end
 
 
