@@ -1,6 +1,6 @@
-<h1><%= @user.username %></h1>
 
 
+<body class="showpage">
 <% unless current_user == @user || current_user.is_friends_with?(@user) %>
   <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
 <% end %>
@@ -78,3 +78,4 @@
     <% end %>
   </ul>
 </div>
+</body>

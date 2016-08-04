@@ -16,6 +16,18 @@ body.signuppic {
 
 }
 
+body.showpage {
+  margin-top: 10em;
+}
+
+body .modal {
+    /* new custom width */
+    width: 45em;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: 20em;
+    height: 35em;
+}
+
 .friendl {
   text-align: center;
   // font-family: 'Merienda One', cursive;
