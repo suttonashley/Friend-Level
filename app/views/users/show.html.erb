@@ -43,24 +43,24 @@
 </ul>
 </div>
 
-<div>
+<div class= "container">
 <h1> The Tasks You've Picked Up </h1>
-<ul>
+<!-- <ul> -->
   <% if current_user %>
     <% @user.tasks.each do |task| %>
     <div class="postit col-md-4 col-sm-6" >
-    <div class="taskspicked">
-    <li>
+    <div=class="taskspicked">
+      <!-- <li> -->
       <div class="title"><b><%= task.title %><br></b></div>
       <%= task.details %><br>
       <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br>
       <b>Worth <%= task.points %>Point(s)</b><br>
-    </li>
+      <!-- <li> -->
+    </div>
     <% end %>
     </div>
-    </div>
   <% end %>
-</ul>
+<!-- </ul> -->
 </div>
 
 <div class="container">
