@@ -3,8 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.tester {
+  
+}
+
+
+
+// User Search Card
 .un {
 text-align: center;
+font-size: 3em;
 }
 
 .caption {
@@ -14,16 +22,15 @@ text-align: center;
 }
 
 .tn {
-margin-top: 10em;
+margin-top: 7em;
 display: relative;
 background-color: white;
-// padding-top: 1em;
 padding-bottom: 1em;
+// border: solid black;
 }
 
 .card {
   color: white;
-  // width: 95em;
   border: Grey;
   text-align: center;
 }
