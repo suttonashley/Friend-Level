@@ -43,10 +43,11 @@ body.taskfeed {
 }
 
 body.showpage {
+  background: url("") no-repeat;
   margin-top: 6em;
 }
 
-body .modal {
+body.modal {
     /* new custom width */
     width: 45em;
     /* must be half of the width, minus scrollbar on the left (30px) */
@@ -55,10 +56,11 @@ body .modal {
 }
 
 .friendl {
-  text-align: left;
+  // text-align: left;
+  text-align: center;
   // font-family: 'Merienda One', cursive;
   margin-top: 2em;
-  margin-left: 1.5em;
+  // margin-left: 1.5em;
   font-size: 5em;
 }
 
@@ -67,7 +69,7 @@ body .modal {
   text-align: center;
   // font-family: 'Merienda One', cursive;
   margin-top: 2em;
-  margin-right: 60em;
+  // margin-right: 60em;
 }
 
 .signuprow {
@@ -196,4 +198,36 @@ body .modal {
   width: 20em;
   border-radius: .5em;
   height: 2.5em;
+}
+
+// Profile Page
+
+.polaroid {
+  // background: url("http://www.scrapbookscrapbook.com/Digital/Frames/gold-scrollwork-rectangle.png");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  border: solid;
+  max-width: 30em;
+  padding: 4.1em;
+  padding-top: 3.2em;
+  text-align: center;
+  margin: 1em;
+  // margin-top: 1em;
+  // margin-right: 1em;
+}
+
+.second {
+  float: right;
+  width: 25%;
+  margin: 1%;
+  // border: solid;
+  text-align: center;
+  background: white;
+}
+
+.first {
+  float:left;
+  width: 70%;
+  margin: 1%;
+  text-align: center;
 }

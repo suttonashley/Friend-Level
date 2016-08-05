@@ -5,23 +5,33 @@
     <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
     <% end %>
 
-
-    <div>
-      <h2><%= @user.username %>'s current friends:</h2>
+    <section>
+    <div class="second">
+      <h1><%= @user.username %>'s<br>Top Friends:</h1>
 
       <% @user.accepted_friends.each do |friend| %>
-        @<%= friend.username %><br>
+      <div class="polaroid"><br>
+      <div class="friendun">
+        <b>
+          <%= friend.username %><br>
+        </br>
+      </div>
         <% if current_user == @user %>
           <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %><br>
         <% end %>
+      </div>
       <% end %>
     </div>
+  </section>
 
-  <div class ="container-1">
+
+  <section>
+  <div class="first">
+  <div class="container-1">
     <h1>Tasks I've Created:</h1>
     <!-- <ul> -->
       <% @user.tasks.each do |task| %>
-        <div class="postit col-md-4 col-sm-6 col-md-offset-1" >
+        <div class="postit col-md-4 col-sm-6 col-md-offset-0" >
           <div class="usertask">
             <div class="title">
               <b>
@@ -45,6 +55,8 @@
       <% end %>
     <!-- </ul> -->
   </div>
+</div>
+</section>
 <!-- Tasks You've Picked Up -->
     <!-- <div class= "container">
       <h1> The Tasks You've Picked Up </h1> -->
@@ -73,16 +85,19 @@
     <!-- </div> -->
 
 <% if current_user == @user %>
-  <div class="container-2">
+  <section>
+    <div class="container-2">
     <h1> Tasks Pending My Completion: </h1>
     <!-- <ul> -->
         <% @user_pending_tasks.each do |task| %>
           <!-- <li> -->
-            <div class="postit col-md-4 col-sm-6 col-md-offset-1" >
-            <i>I'm doing this for: <b><%= task.creator.username %></b></i><br><br>
+            <div class="postit2 col-md-4 col-sm-6 col-md-offset-0" >
+            <u><i>I'm doing this for: <b><%= task.creator.username %></b></i></u><br>
+            <div class="title">
             <b>
               <%= task.title %><br>
             </b>
+            </div>
             <%= task.details %><br>
             <%= task.due_date.strftime("%b. %d, '%y - %I:%M %p") %><br><br>
             <b>
@@ -94,5 +109,6 @@
 
       <% end %>
     <!-- </ul> -->
-  </div>
+    </div>
+  </section>
 </body>
