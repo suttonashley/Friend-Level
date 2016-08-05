@@ -1,14 +1,14 @@
 
-<body class="showpage">
-  <% unless current_user == @user || current_user.is_friends_with?(@user) %>
-    <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
-  <% end %>
 
-<!-- <div class ="container"> -->
-  <h1>Here are your tasks:</h1>
+<body class="showpage">
+    <% unless current_user == @user || current_user.is_friends_with?(@user) %>
+    <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
+    <% end %>
+
 
     <div>
       <h2><%= @user.username %>'s current friends:</h2>
+
       <% @user.accepted_friends.each do |friend| %>
         @<%= friend.username %>
         <% if current_user == @user %>
@@ -17,37 +17,22 @@
       <% end %>
     </div>
 
-
-  <div class="tasksupicked">
-    <h1> The Tasks You've Picked Up </h1>
-  </div>
-    <% if current_user %>
-      <% @user.tasks.each do |task| %>
-        <div class="postit col-md-4 col-sm-6" >
-          <div class="taskspicked">
-            <div class="title">
-              <b><%= task.title %><br></b>
-            </div>
-              <%= task.details %><br>
-              <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br>
-              <b>Worth <%= task.points %> Point(s)</b><br>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-
   <div class ="container">
-    <h1>Available Tasks:</h1>
+    <h1>Created Tasks:</h1>
     <ul>
       <% @user.tasks.each do |task| %>
         <div class="postit col-md-4 col-sm-6" >
           <div class="usertask">
             <div class="title">
-              <b><%= task.title %><br></b>
+              <b>
+                <%= task.title %><br>
+              </b>
             </div>
             <%= task.details %><br>
             <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p")%><br><br>
-            <b>Worth <%= task.points %> Point(s)<br></b>
+            <b>
+              Worth <%= task.points %> Point(s)<br>
+            </b>
             <% if current_user.id == task.user_id %>
               (<%= link_to 'Edit', edit_user_task_path(current_user, task) %>)
               (<%= link_to 'Delete', task, :method => :delete %>)
@@ -60,7 +45,6 @@
       <% end %>
     </ul>
   </div>
-
 <!-- Tasks You've Picked Up -->
     <!-- <div class= "container">
       <h1> The Tasks You've Picked Up </h1> -->
@@ -87,12 +71,11 @@
       <%# end %>
     <!-- </ul> -->
     <!-- </div> -->
-
+<% if current_user == @user %>
   <div class="container">
-    <h1> Must Execute </h1>
+    <h1> Pending Completion: </h1>
     <ul>
-      <% if current_user %>
-        <% @user_accepted_tasks.each do |task| %>
+        <% @user_pending_tasks.each do |task| %>
           <li>
             For: <b><%= task.creator.username %></b>
             <%= task.title %>

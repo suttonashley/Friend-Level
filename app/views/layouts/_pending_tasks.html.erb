@@ -16,7 +16,7 @@
                 <%= task.details %>
                 <%= task.due_date %>
                 <%= task.points %>
-                <%= button_to 'Approve', accept_task_path(task.id), :method => :post %>
+                <%= button_to 'Completed', accept_task_path(task.id), :method => :post %>
                 <%= button_to 'Reject', decline_task_path(task.id), :method => :post %>
               </li>
               <% end %>
