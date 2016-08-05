@@ -38,13 +38,16 @@ class User < ApplicationRecord
 
 
   def top_friends_that_you_earn_points_from(limit)
-     missions.accepted.group(:creator).sum(:points).sort_by { |name, point| point}.reverse[0..limit]
+    missions.accepted.group(:creator).sum(:points).sort_by { |name, point| point}.reverse[0..limit]
   end
 
   def top_friends_that_earn_points_from_you(limit)
+    tasks.accepted.group(:doer).sum(:points).sort_by { |name, point| point}.reverse[0..limit]
   end
 
-# my fix
+  def friend_comparison
+
+  end
 
 
 #ed's fix in the editor

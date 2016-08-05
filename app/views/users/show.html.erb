@@ -2,7 +2,7 @@
 
 <body class="showpage">
     <% unless current_user == @user || current_user.is_friends_with?(@user) %>
-    <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
+      <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
     <% end %>
 
   <section>
@@ -23,6 +23,22 @@
         <% end %>
       </div>
       <% end %>
+  </section>
+
+  <section>
+    <h1> Top friends that do things for you: </h1>
+    <% @user.top_friends_that_earn_points_from_you(3).each do |friend|%>
+      <%= friend[0].username %>
+      <%= friend[1] %>
+    <% end %>
+  </section>
+
+  <section>
+    <h1> Top friends that you do things for: </h1>
+    <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
+      <%= friend[0].username %>
+      <%= friend[1] %>
+    <% end %>
   </section>
 
 
