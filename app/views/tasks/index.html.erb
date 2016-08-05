@@ -1,4 +1,30 @@
-<body class = "taskfeed">
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
-</body>
+
+
+<!-- <%= params[:term] %>
+
+<h2>Results</h2>
+<% @users.each do |u|%>
+<div class="card">
+ <div class="col-sm-6 col-md-4 col-md-offset-4">
+   <div class="tn">
+     <%= image_tag u.avatar.url(:thumb) %>
+     <div class="card-block">
+     <div class ="un">
+       <%= link_to u.username, u %>
+     </div>
+     <div class="caption">
+       <p> </p>
+       <% if u.friends.map(&:id).include?(current_user.id) %>
+       <%= link_to u.username, u %>
+       <% else %>
+       <%= button_to 'Add+', add_friend_path(friend: u.id), class: "btn btn-primary" %>
+       <% end %>
+     </div>
+   </div>
+ </div>
+</div>
+<% end %>
+
+
+
+<body background="https://wallpaperscraft.com/image/point_gray_texture_55269_2560x1440.jpg"> -->
