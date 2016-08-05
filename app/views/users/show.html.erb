@@ -5,7 +5,7 @@
     <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
     <% end %>
 
-    <section>
+  <section>
     <div class="second">
       <div class="friendlist">
       <h1><%= @user.username %>'s<br>Top Friends:</h1>
@@ -88,7 +88,9 @@
 <% if current_user == @user %>
   <section>
     <div class="container-2">
-    <h1> Tasks Pending My Completion: </h1>
+    <div class="pendingcom">
+      <h1> Tasks Pending My Completion: </h1>
+    </div>
         <% @user_pending_tasks.each do |task| %>
             <div class="postit2 col-md-4 col-sm-6 col-md-offset-0" >
             <u><i>I'm doing this for: <b><%= task.creator.username %></b></i></u><br>
