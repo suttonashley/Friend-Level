@@ -21,6 +21,7 @@
     <h1>Tasks I've Created:</h1>
     <!-- <ul> -->
       <% @user.tasks.each do |task| %>
+      <% if task.status != "accepted" %>
         <div class="postit col-md-4 col-sm-6 col-md-offset-1" >
           <div class="usertask">
             <div class="title">
@@ -42,6 +43,7 @@
             <% end %>
           </div>
         </div>
+        <% end %>
       <% end %>
     <!-- </ul> -->
   </div>
