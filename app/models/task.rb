@@ -13,6 +13,10 @@ class Task < ApplicationRecord
   validates :due_date, presence: true
   validate :not_past_date
 
+  scope :accepted, -> {where(status: :accepted)}
+  scope :pending, -> {where(status: :pending)}
+  scope :requested, -> {were(status: :requested)}
+  scope :declined, -> {where(status: :declined)}
 
   enum status: {
      requested: 'requested',
