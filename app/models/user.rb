@@ -45,6 +45,10 @@ class User < ApplicationRecord
     tasks.accepted.group(:doer).sum(:points).sort_by { |name, point| point}.reverse[0..limit]
   end
 
+  def friend_comparison
+
+  end
+
 
 #ed's fix in the editor
 # missions.accepted.group(:creator).sum(:points).sort_by {|hsh| -hsh.values.first}[0..limit]
