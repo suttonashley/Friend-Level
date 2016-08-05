@@ -28,8 +28,8 @@
   <section>
   <div class="first">
   <div class="container-1">
-    <h1>Tasks I've Created:</h1>
-    <!-- <ul> -->
+    <div class="list1"><h1>Tasks I've Created:</h1>
+    </div>
       <% @user.tasks.each do |task| %>
         <div class="postit col-md-4 col-sm-6 col-md-offset-0" >
           <div class="usertask">
@@ -88,9 +88,7 @@
   <section>
     <div class="container-2">
     <h1> Tasks Pending My Completion: </h1>
-    <!-- <ul> -->
         <% @user_pending_tasks.each do |task| %>
-          <!-- <li> -->
             <div class="postit2 col-md-4 col-sm-6 col-md-offset-0" >
             <u><i>I'm doing this for: <b><%= task.creator.username %></b></i></u><br>
             <div class="title">
@@ -103,12 +101,10 @@
             <b>
               Worth <%= task.points %> Point(s)
             </b>
-          <!-- </li> -->
             </div>
         <% end %>
 
       <% end %>
-    <!-- </ul> -->
     </div>
   </section>
 </body>
