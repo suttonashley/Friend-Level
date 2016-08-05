@@ -7,7 +7,9 @@
 
     <section>
     <div class="second">
+      <div class="friendlist">
       <h1><%= @user.username %>'s<br>Top Friends:</h1>
+      </div>
 
       <% @user.accepted_friends.each do |friend| %>
       <div class="polaroid"><br>
@@ -32,7 +34,6 @@
     </div>
       <% @user.tasks.each do |task| %>
       <% if task.status != "accepted" %>
-        <div class="postit col-md-4 col-sm-6 col-md-offset-1" >
         <div class="postit col-md-4 col-sm-6 col-md-offset-0" >
           <div class="usertask">
             <div class="title">
@@ -57,7 +58,6 @@
         <% end %>
       <% end %>
     <!-- </ul> -->
-  </div>
 </div>
 </section>
 <!-- Tasks You've Picked Up -->
