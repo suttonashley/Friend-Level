@@ -84,9 +84,7 @@
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <table class="col-md-7">
-                <tr>
-                </tr>
+              <table class="col-md-12">
                 <% current_user.friends.each do |friend| %>
                 <tr>
                   <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
