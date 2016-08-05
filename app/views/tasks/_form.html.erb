@@ -11,10 +11,10 @@
     <span class="error"><%= flash[:error] %><br></span>
 
     <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control", maxlength: 14, placeholder: "14 characters" %><br>
+    <%= f.text_field :title, class: "form-control", maxlength: 14, placeholder: "e.g.'Bring me dinner' - 15 character limit" %><br>
 
     <%= f.label :details %>
-    <%= f.text_field :details, class: "form-control", maxlength: 23, placeholder: "23 characters" %><br>
+    <%= f.text_field :details, class: "form-control", maxlength: 23, placeholder: "e.g. 'I want sushi' - 23 character limit" %><br>
 
     <%= f.label :due_date %>
     <%= f.datetime_field :due_date, class: "form-control" %><br>
