@@ -38,7 +38,7 @@
               (<%= link_to 'Delete', task, :method => :delete %>)
             <% else %>
               <%= link_to 'Pick up this task', request_task_path(current_user, task), :method => :post %>
-              <%= link_to 'Approve this task', accept_task_path(task.id), :method => :post %>
+              <%#= link_to 'Approve this task', accept_task_path(task.id), :method => :post %>
             <% end %>
           </div>
         </div>
