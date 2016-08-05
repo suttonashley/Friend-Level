@@ -19,9 +19,9 @@
 
   <div class ="container-1">
     <h1>Tasks I've Created:</h1>
-    <ul>
+    <!-- <ul> -->
       <% @user.tasks.each do |task| %>
-        <div class="postit col-md-4 col-sm-6" >
+        <div class="postit col-md-4 col-sm-6 col-md-offset-1" >
           <div class="usertask">
             <div class="title">
               <b>
@@ -43,7 +43,7 @@
           </div>
         </div>
       <% end %>
-    </ul>
+    <!-- </ul> -->
   </div>
 <!-- Tasks You've Picked Up -->
     <!-- <div class= "container">
@@ -78,7 +78,7 @@
     <!-- <ul> -->
         <% @user_pending_tasks.each do |task| %>
           <!-- <li> -->
-            <div class="postit col-md-4 col-sm-6" >
+            <div class="postit col-md-4 col-sm-6 col-md-offset-1" >
             <i>I'm doing this for: <b><%= task.creator.username %></b></i><br><br>
             <b>
               <%= task.title %><br>
