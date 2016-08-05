@@ -13,7 +13,7 @@ class TasksController < ApplicationController
       redirect_to current_user
     else
       flash[:error] = "Cannot be in the past. Try again, friend."
-      redirect_to new_task_path
+      redirect_to :back
     end
   end
 
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    
+
   end
 
   def destroy
