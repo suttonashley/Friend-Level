@@ -205,13 +205,13 @@ body.modal {
 
 .polaroid {
   // background: url("http://1.bp.blogspot.com/-qzrxxDzyS3I/UlBascpVyJI/AAAAAAAAfI4/dru3-JR-Auk/s1600/fabulous+gold++frame.png");
-  background-size: 250px 250px;
+  // background-size: 175px 250px;
   background-repeat: no-repeat;
   border: solid;
-  max-width: 30em;
+  // max-width: 30em;
   padding: 4.1em;
   padding-top: 3.2em;
-  padding-bottom: 5em;
+  padding-bottom: 15em;
   text-align: center;
   margin: 1em;
   background: white;
@@ -237,5 +237,6 @@ body.modal {
 .friendlist {
   background: black;
   color: white;
-  padding: .1em;
+  padding-bottom: .1em;
+  transform: rotate(15deg);
 }

@@ -78,9 +78,9 @@ body.taskin {
   margin-top: .5em;
 }
 
-.tasksupicked {
-  clear: both;
-}
+// .tasksupicked {
+//   clear: both;
+// }
 
 .container-1 {
   // padding-top: 2em;
@@ -98,4 +98,11 @@ body.taskin {
   margin: 1em;
   clear: both;
   // border: solid;
+}
+
+.pendingcom {
+background: black;
+color: white;
+text-align: center;
+padding: .1em;
 }
