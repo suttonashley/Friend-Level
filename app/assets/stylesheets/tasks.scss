@@ -22,6 +22,10 @@ body.taskin {
 
 // Tasks
 
+.taskform {
+  margin-top: 4em;
+}
+
 .postit {
   background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
   background-size: 250px 250px;
@@ -41,7 +45,8 @@ body.taskin {
 }
 
 .usertask {
-  margin: 1em;
+  padding-top: 1em;
+  padding-bottom: .5em;
 }
 
 .taskspicked {
@@ -56,10 +61,16 @@ body.taskin {
   clear: both;
 }
 
-.container {
-  clear: both;
+.container-1 {
+
+  margin: 1em;
 }
 
 .error{
   color: red;
+}
+
+.container-2 {
+  margin: 1em;
+  clear: both;
 }

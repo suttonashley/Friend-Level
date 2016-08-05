@@ -10,15 +10,15 @@
       <h2><%= @user.username %>'s current friends:</h2>
 
       <% @user.accepted_friends.each do |friend| %>
-        @<%= friend.username %>
+        @<%= friend.username %><br>
         <% if current_user == @user %>
-          <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %>
+          <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %><br>
         <% end %>
       <% end %>
     </div>
 
-  <div class ="container">
-    <h1>Created Tasks:</h1>
+  <div class ="container-1">
+    <h1>Tasks I've Created:</h1>
     <ul>
       <% @user.tasks.each do |task| %>
         <div class="postit col-md-4 col-sm-6" >
@@ -29,7 +29,7 @@
               </b>
             </div>
             <%= task.details %><br>
-            <%= task.due_date.strftime("%b. %d, %Y - %I:%M %p")%><br><br>
+            <%= task.due_date.strftime("%b. %d, '%y - %I:%M %p")%><br><br>
             <b>
               Worth <%= task.points %> Point(s)<br>
             </b>
@@ -71,20 +71,28 @@
       <%# end %>
     <!-- </ul> -->
     <!-- </div> -->
+
 <% if current_user == @user %>
-  <div class="container">
-    <h1> Pending Completion: </h1>
-    <ul>
+  <div class="container-2">
+    <h1> Tasks Pending My Completion: </h1>
+    <!-- <ul> -->
         <% @user_pending_tasks.each do |task| %>
-          <li>
-            For: <b><%= task.creator.username %></b>
-            <%= task.title %>
-            <%= task.details %>
-            <%= task.due_date %>
-            <%= task.points %>
-          </li>
+          <!-- <li> -->
+            <div class="postit col-md-4 col-sm-6" >
+            <i>I'm doing this for: <b><%= task.creator.username %></b></i><br><br>
+            <b>
+              <%= task.title %><br>
+            </b>
+            <%= task.details %><br>
+            <%= task.due_date.strftime("%b. %d, '%y - %I:%M %p") %><br><br>
+            <b>
+              Worth <%= task.points %> Point(s)
+            </b>
+          <!-- </li> -->
+            </div>
         <% end %>
+
       <% end %>
-    </ul>
+    <!-- </ul> -->
   </div>
 </body>
