@@ -5,21 +5,22 @@
       <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
     <% end %>
 
-    <!-- <div class="polaroid"><br>
-      <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img> -->
-<h3>What's Up, <%= @user.username %><br></h3>
+<div class="welcome">
+  <h3>What's Up, <%= @user.username %><br></h3>
+</div>
 
 <section>
 <div class="second">
 
   <section>
+    <div class="overlay">
       <div class="friendlist">
-        <h3> Top friends that do things for you: </h3>
+        <h3> Top friends who do things for you: </h3>
       </div>
     <% @user.top_friends_that_earn_points_from_you(3).each do |friend|%>
-    <div class="polaroid"><br>
+    <div class="polaroid">
       <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img>
-      <b>
+      <b><br>
         <%= friend[0].username %>
       </b><br>
       <%= friend[1] %>
@@ -30,23 +31,23 @@
 
   <section>
     <div class="friendlist2">
-      <h3> Top friends that you do things for: </h3>
+      <h3> Top friends who <u>you</u> do things for: </h3>
     </div>
     <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
     <div class="polaroid"><br>
       <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img>
       <b>
         <%= friend[0].username %>
-      </b>
+      </b><br>
       <%= friend[1] %>
     </div>
     <% end %>
 
+  </div>
   </section>
 
 </div>
 </section>
-
 
   <section>
   <div class="first">

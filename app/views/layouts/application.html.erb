@@ -24,61 +24,51 @@
 </head>
 
 <!-- body begins -->
-<body class="<%= controller_name%> <%= controller.action_name %>">
-
-
-  <nav class="navbar navbar-fixed-top navbar-inverse">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+<body>
+  <!-- static nav bar -->
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <% if current_user %>
+    <!-- <#%= link_to "FRIEND LEVEL", user_path(current_user), id: "logo"%> -->
+    <div class="dropdown">
+      <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIENDLEVEL
       </button>
-      <a class="navbar-brand" href="#">FriendLevel</a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <div class="test2">
+          <li><%= link_to "My Profile", current_user, id: "color"%></li>
+          <li><%= link_to "New Task", new_task_path, id: "color"%></li>
+          <li><%= link_to "Tasks Feed", user_tasks_path(current_user), id: "color"%></li>
+          <li><%= link_to "Logout", '/logout', id: "color"%></li>
+        </div>
+      </ul>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <% if current_user %>
-        <ul class="nav navbar-nav">
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIEND LEVEL
-            </button>
-            <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#friend_request">
-              <i class="glyphicon glyphicon-user"></i>
-            </button>
-            <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#pending_tasks">
-              View Pending Tasks
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <div class="test2">
-                <li><%= link_to "New Task", new_task_path, id: "color"%></li>
-                <li><%= link_to "Tasks Feed", user_tasks_path(current_user), id: "color"%></li>
-                <li><%= link_to "Logout", '/logout', id: "color"%></li>
-              </div>
-            </ul>
-          </div>
-        </ul>
-        <!-- search bar -->
-        <ul class="header nav navbar-nav navbar-right">
-          <div class="test" style="display: inline-flex;">
-            <%= link_to current_user, id: "color" do %>
-              <i class="glyphicon glyphicon-user"></i>
-            <% end %>
-            <%= form_tag search_path do %>
-            <%= search_field_tag :term,'', class: "form-control" %>
-            <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
-            <% end %>
-          </div>
-        </ul>
-      <% else %>
-        <%= link_to "FRIEND LEVEL", root_path, id: "logo"%>
-        <%= link_to 'Signup', signup_path, id: "logo"%>
-      <%end%>
-    </div><!-- /.navbar-collapse -->
-  </nav>
+
+    <!-- Button trigger modal for Friend Requests -->
+    <div class="requests">
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#friend_request">
+      Friend Requests
+      </button>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pending_tasks">
+      View Pending Tasks
+      </button>
+    </div>
+
+    <!-- search bar -->
+    <ul class="header nav navbar-nav navbar-right">
+      <div class="test">
+        <%= form_tag search_path do %>
+        <%= search_field_tag :term,'', class: "search-bar" %>
+        <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
+        <% end %>
+      </div>
+    </ul>
+
+    <% else %>
+    <%= link_to "FRIEND LEVEL", root_path, id: "logo"%>
+    <%= link_to 'Signup', signup_path, id: "logo"%>
+    <% end %>
+  </header>
+
 
   <!-- Modal for Friend Requests-->
   <% if current_user %>
@@ -92,12 +82,14 @@
         <div class="modal-body">
           <div class="container">
             <div class="row">
-              <table class="col-md-12">
+              <table class="col-md-7">
                 <% current_user.friends.each do |friend| %>
                 <tr>
                   <% if friend.friendships.where(status: 'requested', friend_id: current_user.id) != [] %>
                   <td class="col-md-4" height="50"><b><%= friend.username %></b></td>
-                  <td class="col-md-4" height="50"><%= button_to 'Accept', accept_friend_path(friend: friend.id), class: "btn btn-primary btn-sm"%></td>
+
+
+<td class="col-md-4" height="50"><%= button_to 'Accept', accept_friend_path(friend: friend.id), class: "btn btn-primary btn-sm"%></td>
                   <td class="col-md-4" height="50"><%= button_to 'Decline', decline_friend_path(friend: friend.id), class: "btn btn-primary btn-sm"%></td>
                   <% end %>
                 </tr>

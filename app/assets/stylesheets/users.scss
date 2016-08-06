@@ -56,6 +56,10 @@ body.modal {
     height: 35em;
 }
 
+.welcome {
+  color: black;
+}
+
 .friendl {
   // text-align: left;
   text-align: center;
@@ -128,6 +132,11 @@ body.modal {
 
 // Headers
 
+.requests {
+  padding-top: .7em;
+  // clear: both;
+}
+
 #color {
   float: left;
   margin-right: 10px;
@@ -190,7 +199,7 @@ body.modal {
 
 .test {
   padding-right: 2em;
-  padding-top: .5em;
+  // margin-bottom: 1em;
 }
 
 // Log-in Page
@@ -205,10 +214,12 @@ body.modal {
 
 .polaroid {
   border: solid;
+  background-repeat: no-repeat;
+  border: solid;
   // padding: 4.1em;
   // padding-top: 3.2em;
   text-align: center;
-  margin: 1em;
+  // margin: 1em;
   background: white;
 }
 
@@ -232,13 +243,19 @@ body.modal {
   background: black;
   color: white;
   padding: .1em;
-  transform: rotate(20deg);
+  padding-bottom: .1em;
+  transform: rotate(16.3deg);
 }
 
 .friendlist2 {
   margin-top: 3em;
   background: black;
   color: white;
-  padding: .07em;
+  padding: .1em;
+  padding-bottom: .1em;
   transform: rotate(-7deg);
+}
+
+.overlay {
+
 }

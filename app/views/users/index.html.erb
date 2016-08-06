@@ -8,7 +8,9 @@
   <div class="card">
    <div class="col-sm-6 col-md-4 col-md-offset-4">
      <div class="tn animated finite fadeInDown">
+       <div class="cardavatar">
        <img src="http://cdn.invitations4u.com/media/type/image/chalkboard_background_gray_black_chalk_board_blank_invitation-r630d802d2d3048dca82f7c6f38bb7a81_zk9gs_530.jpg" width=400></img>
+      </div>
        <!-- <#%= image_tag u.avatar.url(:thumb) %> -->
           <div class="caption">
             <% if u.friends.map(&:id).include?(current_user.id) %>
