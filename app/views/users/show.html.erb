@@ -55,14 +55,14 @@
         <%= friend[0].username %>
       </b><br>
       <%= friend[1] %><br><br>
-    </div>
+    </div><br>
     <% end %>
 
   </section>
 
   <section>
     <div class="friendlist2">
-      <h3> Top Friends Who You Do The Most For </h3>
+      <h3> Top Friends Who <u>You Do The Most For </h3>
     </div>
     <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
     <div class="polaroid"><br>
