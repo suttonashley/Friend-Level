@@ -211,7 +211,7 @@ body.modal {
   // max-width: 30em;
   padding: 4.1em;
   padding-top: 3.2em;
-  padding-bottom: 15em;
+  // padding-bottom: 15em;
   text-align: center;
   margin: 1em;
   background: white;
@@ -238,5 +238,13 @@ body.modal {
   background: black;
   color: white;
   padding-bottom: .1em;
-  transform: rotate(15deg);
+  transform: rotate(16.3deg);
+}
+
+.friendlist2 {
+  margin-top: 3em;
+  background: black;
+  color: white;
+  padding-bottom: .1em;
+  transform: rotate(-7deg);
 }
