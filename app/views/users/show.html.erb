@@ -14,8 +14,7 @@
     <br>
     <div class="rotate">
       <div class="polaroid"><br>
-        <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" transform="rotate(-3deg)" width="120" height="135"></img><br><br>
-      </div>
+<%= image_tag @user.avatar.url(:medium) %> 
     </div>
   <div class="welcome">
     <h3><b>WHAT'S UP, <%= @user.username.upcase %>!</b></h3>
