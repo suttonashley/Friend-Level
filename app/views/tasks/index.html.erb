@@ -1,6 +1,23 @@
-<h1>Task Index</h1>
 
+<body class="taskin">
 
+<% @task.each do |task| %>
+<div class="postit3 col-md-4 col-sm-6 col-md-offset-0" >
+  <p>
+    <b>
+      COMPLETED!
+    </b><br><br>
+    <b>
+      <%= task.doer.username %><br>
+    </b>
+     <i>"<%= task.title %>"</i><br>
+    for<br>
+    <b>
+      <%= task.creator.username %><br>
+      <%= task.due_date.strftime("%b. %d, '%y - %I:%M %p") %>
+    </b>
+  </p>
+</div>
+<% end %>
 
-
-<body class="taskin"></body>
+</body>

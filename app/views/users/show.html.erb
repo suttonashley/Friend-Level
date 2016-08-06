@@ -2,28 +2,50 @@
 
 <body class="showpage">
     <% unless current_user == @user || current_user.is_friends_with?(@user) %>
-    <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
+      <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
     <% end %>
 
-    <section>
-    <div class="second">
-      <div class="friendlist">
-      <h1><%= @user.username %>'s<br>Top Friends:</h1>
-      </div>
+    <!-- <div class="polaroid"><br>
+      <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img> -->
+<h3>What's Up, <%= @user.username %><br></h3>
 
-      <% @user.accepted_friends.each do |friend| %>
-      <div class="polaroid"><br>
-      <div class="friendun">
-        <b>
-          <%= friend.username %><br>
-        </br>
+<section>
+<div class="second">
+
+  <section>
+      <div class="friendlist">
+        <h3> Top friends that do things for you: </h3>
       </div>
-        <% if current_user == @user %>
-          <%= link_to "(Unfriend - It's not you, it's me)", friendship_path(friend), :method => :delete %><br>
-        <% end %>
-      </div>
-      <% end %>
+    <% @user.top_friends_that_earn_points_from_you(3).each do |friend|%>
+    <div class="polaroid"><br>
+      <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img>
+      <b>
+        <%= friend[0].username %>
+      </b><br>
+      <%= friend[1] %>
+    </div>
+    <% end %>
+
   </section>
+
+  <section>
+    <div class="friendlist2">
+      <h3> Top friends that you do things for: </h3>
+    </div>
+    <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
+    <div class="polaroid"><br>
+      <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img>
+      <b>
+        <%= friend[0].username %>
+      </b>
+      <%= friend[1] %>
+    </div>
+    <% end %>
+
+  </section>
+
+</div>
+</section>
 
 
   <section>
@@ -58,37 +80,13 @@
       <% end %>
 </div>
 </section>
-<!-- Tasks You've Picked Up -->
-    <!-- <div class= "container">
-      <h1> The Tasks You've Picked Up </h1> -->
-      <!-- <ul> -->
-      <%# if current_user %>
-        <%# @user.tasks.each do |task| %>
-          <!-- <div class="postit col-md-4 col-sm-6" >
-            <div class="taskspicked">
-              <li>
-              <div class="title">
-                <b> -->
-                  <!-- <%#= task.title %><br> -->
-                <!-- </b>
-              </div> -->
-              <!-- <#%= task.details %><br> -->
-              <!-- <#%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br> -->
-              <!-- <b> -->
-                <!-- Worth <#%= task.points %>Point(s)<br> -->
-              <!-- </b> -->
-              <!-- <li> -->
-            <!-- </div>
-          </div> -->
-        <%# end %>
-      <%# end %>
-    <!-- </ul> -->
-    <!-- </div> -->
 
+<section>
 <% if current_user == @user %>
-  <section>
     <div class="container-2">
-    <h1> Tasks Pending My Completion: </h1>
+    <div class="pendingcom">
+      <h1> Tasks Pending My Completion: </h1>
+    </div>
         <% @user_pending_tasks.each do |task| %>
             <div class="postit2 col-md-4 col-sm-6 col-md-offset-0" >
             <u><i>I'm doing this for: <b><%= task.creator.username %></b></i></u><br>

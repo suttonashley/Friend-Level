@@ -37,6 +37,12 @@ user5 = User.create(
   password_confirmation: 'password'
 )
 
+user6 = User.create(
+  username: 'salomon',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
 10.times do
   User.create(username: Faker::Internet.user_name, password: "password", password_confirmation: "password")
 end

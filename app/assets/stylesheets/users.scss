@@ -204,32 +204,26 @@ body.modal {
 // Profile Page
 
 .polaroid {
-  // background: url("http://1.bp.blogspot.com/-qzrxxDzyS3I/UlBascpVyJI/AAAAAAAAfI4/dru3-JR-Auk/s1600/fabulous+gold++frame.png");
-  background-size: 250px 250px;
-  background-repeat: no-repeat;
   border: solid;
-  max-width: 30em;
-  padding: 4.1em;
-  padding-top: 3.2em;
-  padding-bottom: 5em;
+  // padding: 4.1em;
+  // padding-top: 3.2em;
   text-align: center;
   margin: 1em;
   background: white;
-  // margin-top: 1em;
-  // margin-right: 1em;
 }
 
 .second {
   float: right;
-  width: 25%;
+  width: 20%;
   margin: 1%;
   // border: solid;
   text-align: center;
+  // overflow: scroll;
 }
 
 .first {
   float:left;
-  width: 70%;
+  width: 75%;
   margin: 1%;
   text-align: center;
 }
@@ -238,4 +232,13 @@ body.modal {
   background: black;
   color: white;
   padding: .1em;
+  transform: rotate(20deg);
+}
+
+.friendlist2 {
+  margin-top: 3em;
+  background: black;
+  color: white;
+  padding: .07em;
+  transform: rotate(-7deg);
 }

@@ -3,7 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.tasks.index {
+  background:#2f3437 url(http://lab.web-gate.fr/images/Noise-Fill.png);
+  box-shadow: inset 0 0 160px hsla(0,0%,0%,.6);
+}
 
+
+.background-3 {
+  background-image: linear-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+}
 
 // Task Form
 
@@ -54,6 +63,21 @@ body.taskin {
   margin: 1em
 }
 
+.postit3 {
+  background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  // border: solid;
+  max-width: 275px;
+  padding: 4.1em;
+  padding-top: 3.5em;
+  padding-bottom: 10em;
+  text-align: center;
+  // margin:auto;
+  margin-top: 1em;
+  margin: 1em
+}
+
 .list1 {
   background: black;
   color: white;
@@ -78,9 +102,9 @@ body.taskin {
   margin-top: .5em;
 }
 
-.tasksupicked {
-  clear: both;
-}
+// .tasksupicked {
+//   clear: both;
+// }
 
 .container-1 {
   // padding-top: 2em;
@@ -95,7 +119,19 @@ body.taskin {
 
 .container-2 {
   padding-top: 2em;
-  margin: 1em;
+  // margin: 1em;
   clear: both;
   // border: solid;
+
+  float:left;
+  width: 70%;
+  margin: 1%;
+  text-align: center;
+}
+
+.pendingcom {
+background: black;
+color: white;
+text-align: center;
+padding: .1em;
 }
