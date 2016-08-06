@@ -1,5 +1,5 @@
 
-<body class="taskformbody">
+<!-- <body class="taskformbody"> -->
 
 
 <div class="createtasknew">
@@ -27,7 +27,7 @@
     <%= f.label :points %>
     <%= f.select "points", options_for_select((100..1000).step(100))%><br><br>
 
-    <%= f.submit "Create Task", class: "btn btn-primary" %>
+    <%= f.submit "Create Task", class: "btn btn-danger" %>
 
     <% end %>
   </div>
