@@ -9,7 +9,7 @@ text-align: center;
 font-size: 3em;
 }
 
-.caption {
+.caption a {
  text-align: center;
  color: black;
  font-size: 2em;
@@ -27,6 +27,12 @@ padding-bottom: 1em;
   color: white;
   border: Grey;
   text-align: center;
+}
+
+.searchresults {
+  margin: 5em;
+  // text-align: center;
+  color: black;
 }
 
 users, .show {
@@ -58,13 +64,13 @@ body.modal {
 
 .welcome {
   color: black;
+  text-align: center;
 }
 
 .friendl {
   // text-align: left;
-  text-align: center;
-  // font-family: 'Merienda One', cursive;
-  margin-top: 2em;
+  // text-align: center;
+  margin-top: 1.6em;
   // margin-left: 1.5em;
   font-size: 5em;
 }
@@ -73,7 +79,7 @@ body.modal {
 .signup {
   text-align: center;
   // font-family: 'Merienda One', cursive;
-  margin-top: 2em;
+  margin-top: 3em;
   // margin-right: 60em;
 }
 
@@ -212,15 +218,37 @@ body.modal {
 
 // Profile Page
 
+.welcome {
+  color: white;
+}
+
+.userinfo {
+  float:left;
+  width: 35%;
+  margin:2%;
+  // border: solid;
+  background: black;
+}
+
+.otherinfo {
+  float: right;
+  width: 55%;
+  margin:2%;
+  border: solid;
+}
+
 .polaroid {
   border: solid;
   background-repeat: no-repeat;
   border: solid;
-  // padding: 4.1em;
-  // padding-top: 3.2em;
   text-align: center;
-  // margin: 1em;
   background: white;
+  max-width: 15em;
+  margin-left: 2.3em;
+}
+
+.rotate {
+  transform: rotate(-6deg);
 }
 
 .second {
@@ -229,12 +257,11 @@ body.modal {
   margin: 1%;
   // border: solid;
   text-align: center;
-  // overflow: scroll;
 }
 
 .first {
   float:left;
-  width: 75%;
+  width: 70%;
   margin: 1%;
   text-align: center;
 }
@@ -244,16 +271,19 @@ body.modal {
   color: white;
   padding: .1em;
   padding-bottom: .1em;
+  padding: .1em;
   transform: rotate(16.3deg);
+  // box-shadow: 10px 10px 5px #888888;
 }
 
 .friendlist2 {
-  margin-top: 3em;
+  margin-top: 5em;
   background: black;
   color: white;
   padding: .1em;
   padding-bottom: .1em;
   transform: rotate(-7deg);
+  // box-shadow: 10px 10px 5px #888888;
 }
 
 .overlay {

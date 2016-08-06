@@ -28,7 +28,6 @@
   <!-- static nav bar -->
   <header class="navbar navbar-fixed-top navbar-inverse">
     <% if current_user %>
-    <!-- <#%= link_to "FRIEND LEVEL", user_path(current_user), id: "logo"%> -->
     <div class="dropdown">
       <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIENDLEVEL
@@ -64,7 +63,7 @@
     </ul>
 
     <% else %>
-    <%= link_to "FRIEND LEVEL", root_path, id: "logo"%>
+    <%= link_to "FRIENDLEVEL", root_path, id: "logo"%>
     <%= link_to 'Signup', signup_path, id: "logo"%>
     <% end %>
   </header>
@@ -89,7 +88,7 @@
                   <td class="col-md-4" height="50"><b><%= friend.username %></b></td>
 
 
-<td class="col-md-4" height="50"><%= button_to 'Accept', accept_friend_path(friend: friend.id), class: "btn btn-primary btn-sm"%></td>
+                  <td class="col-md-4" height="50"><%= button_to 'Accept', accept_friend_path(friend: friend.id), class: "btn btn-primary btn-sm"%></td>
                   <td class="col-md-4" height="50"><%= button_to 'Decline', decline_friend_path(friend: friend.id), class: "btn btn-primary btn-sm"%></td>
                   <% end %>
                 </tr>
