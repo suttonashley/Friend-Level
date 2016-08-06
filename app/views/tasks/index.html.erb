@@ -1,6 +1,16 @@
-<h1>Task Index</h1>
+<h1>Task Feed</h1>
 
 
 
 
-<body class="taskin"></body>
+<body class="taskin">
+
+<% @task.each do |task| %>
+  <p>
+    <%= task.doer.username %>
+     completed : <%= task.title %>
+    for : <%= task.creator.username %>
+  </p>
+<% end %>
+
+</body>
