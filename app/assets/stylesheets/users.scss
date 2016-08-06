@@ -203,8 +203,36 @@ body.modal {
   border-radius: .5em;
 }
 
+.my-navbar{
+    background-color:black;
+    border-radius:0;
+}
+
+.btn-new {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-color: gray;
+}
+
+.btn-new:hover,
+.btn-new:focus,
+.btn-new:active    {
+    background-color: #a6a6a6;
+    color: #333;
+    font-weight: bold;
+    border-color: #333333;
+}
+
+
+
+
+
+
+
 .test {
-  padding-right: 2em;
+  padding: .7em;
+  padding-right: 1.5em;
   // margin-bottom: 1em;
 }
 

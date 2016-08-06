@@ -26,10 +26,10 @@
 <!-- body begins -->
 <body>
   <!-- static nav bar -->
-  <header class="navbar navbar-fixed-top navbar-inverse">
+  <header class="navbar navbar-fixed-top my-navbar">
     <% if current_user %>
     <div class="dropdown">
-      <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIENDLEVEL
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -41,31 +41,33 @@
         </div>
       </ul>
     </div>
+    <!-- search bar -->
+    <!-- <ul class="header nav navbar-nav navbar-right"> -->
+    <nav class= "navbar-right">
+      <div class="test">
+        <%= form_tag search_path do %>
+        <%= search_field_tag :term,'', class: "search-bar" %>
+        <%= submit_tag "Go!", class: "btn btn-danger btn-sm" %>
+        <% end %>
+      </div>
+    </nav>
 
     <!-- Button trigger modal for Friend Requests -->
     <div class="requests">
-      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#friend_request">
+      <button type="button" class="btn btn-new btn-sm" data-toggle="modal" data-target="#friend_request">
       Friend Requests
       </button>
-      <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#pending_tasks">
+      <button type="button" class="btn btn-new btn-sm" data-toggle="modal" data-target="#pending_tasks">
       View Pending Tasks
       </button>
     </div>
 
-    <!-- search bar -->
-    <ul class="header nav navbar-nav navbar-right">
-      <div class="test">
-        <%= form_tag search_path do %>
-        <%= search_field_tag :term,'', class: "search-bar" %>
-        <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
-        <% end %>
-      </div>
-    </ul>
-
     <% else %>
-    <%= link_to "FRIENDLEVEL", root_path, id: "logo"%>
-    <%= link_to 'Signup', signup_path, id: "logo"%>
-    <% end %>
+    <nav class= "navbar navbar-fixed-top navbar-default">
+      <%= link_to "FRIENDLEVEL", root_path, id: "logo"%>
+      <%= link_to 'Signup', signup_path, id: "logo"%>
+      <% end %>
+    </nav>
   </header>
 
 
