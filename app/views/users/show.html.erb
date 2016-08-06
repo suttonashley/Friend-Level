@@ -5,6 +5,8 @@
       <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
     <% end %>
 
+<h3>What's Up, <%= @user.username %><br></h3>
+
   <!-- <section>
     <div class="second">
       <div class="friendlist">
@@ -38,8 +40,8 @@
       <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img>
       <%= friend[0].username %>
       <%= friend[1] %>
-    <% end %>
     </div>
+    <% end %>
   </section>
 
   <section>
@@ -51,8 +53,8 @@
       <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" ></img>
       <%= friend[0].username %>
       <%= friend[1] %>
+    </div>
     <% end %>
-  </div>
   </section>
 
 </div>
@@ -91,6 +93,32 @@
       <% end %>
 </div>
 </section>
+<!-- Tasks You've Picked Up -->
+    <!-- <div class= "container">
+      <h1> The Tasks You've Picked Up </h1> -->
+      <!-- <ul> -->
+      <%# if current_user %>
+        <%# @user.tasks.each do |task| %>
+          <!-- <div class="postit col-md-4 col-sm-6" >
+            <div class="taskspicked">
+              <li>
+              <div class="title">
+                <b> -->
+                  <!-- <%#= task.title %><br> -->
+                <!-- </b>
+              </div> -->
+              <!-- <#%= task.details %><br> -->
+              <!-- <#%= task.due_date.strftime("%b. %d, %Y - %I:%M %p") %><br><br> -->
+              <!-- <b> -->
+                <!-- Worth <#%= task.points %>Point(s)<br> -->
+              <!-- </b> -->
+              <!-- <li> -->
+            <!-- </div>
+          </div> -->
+        <%# end %>
+      <%# end %>
+    <!-- </ul> -->
+    <!-- </div> -->
 
 <% if current_user == @user %>
   <section>
