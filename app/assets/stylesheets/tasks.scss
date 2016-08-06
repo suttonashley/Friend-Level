@@ -3,7 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.tasks.index {
+  background:#2f3437 url(http://lab.web-gate.fr/images/Noise-Fill.png);
+  box-shadow: inset 0 0 160px hsla(0,0%,0%,.6);
+}
 
+
+.background-3 {
+  background-image: linear-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+}
 
 // Task Form
 

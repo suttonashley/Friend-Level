@@ -1,16 +1,28 @@
-<h1>Task Feed</h1>
+<h1 class="text-center">Task Feed</h1>
 
+<div class="container">
+  <% @task.each_slice(3) do |task| %>
+    <div class="row">
+      <% task.each do |t| %>
+        <div class="col-sm-4 col-md-4">
 
+          <div class="panel panel-danger">
+            <div class="panel-body">
+              <div class="text-center">
+                <img class="img-circle" src="http://placehold.it/100x100" alt="...">
+              </div>
+              <hr class="panel-danger">
+                <p>
+                  <b><%= t.doer.username.upcase %></b> for <b><%= t.creator.username.upcase %></b>
+                </p>
+                <p>
+                  <strong>Completed:</strong> <%= t.title %>
+                </p>
 
-
-<body class="taskin">
-
-<% @task.each do |task| %>
-  <p>
-    <%= task.doer.username %>
-     completed : <%= task.title %>
-    for : <%= task.creator.username %>
-  </p>
-<% end %>
-
-</body>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
