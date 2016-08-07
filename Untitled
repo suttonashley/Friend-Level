@@ -1,0 +1,44 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <% if current_user %>
+  <!-- <#%= link_to "FRIEND LEVEL", user_path(current_user), id: "logo"%> -->
+  <div class="dropdown">
+    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIEND LEVEL
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <div class="test2">
+        <li><%= link_to "My Profile", current_user, id: "color"%></li>
+        <li><%= link_to "New Task", new_task_path, id: "color"%></li>
+        <li><%= link_to "Tasks Feed", user_tasks_path(current_user), id: "color"%></li>
+        <li><%= link_to "Logout", '/logout', id: "color"%></li>
+      </div>
+    </ul>
+  </div>
+
+  Signed in as <%= current_user.username %>
+
+  <%#= link_to "Logout", '/logout', class: 'btn btn-danger' %>
+
+  <!-- Button trigger modal for Friend Requests -->
+  <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#friend_request">
+    Friend Requests
+  </button>
+  <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#pending_tasks">
+    View Pending Tasks
+  </button>
+
+  <!-- search bar -->
+  <ul class="header nav navbar-nav navbar-right">
+    <div class="test">
+      <%= form_tag search_path do %>
+      <%= search_field_tag :term,'', class: "search-bar" %>
+      <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
+      <% end %>
+    </div>
+  </ul>
+
+  <% else %>
+  <%= link_to "FRIEND LEVEL", root_path, id: "logo"%>
+  <%= link_to 'Signup', signup_path, id: "logo"%>
+  <% end %>
+</header>
