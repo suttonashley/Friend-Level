@@ -29,8 +29,3 @@ user3 = User.create(
 10.times do
   User.create(username: Faker::Internet.user_name, password: "password", password_confirmation: "password")
 end
-
-
-
-Friendship.request(user1, user2)
-Friendship.request(user1, user3)

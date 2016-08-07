@@ -27,19 +27,20 @@
   <!-- static nav bar -->
   <header class="navbar navbar-fixed-top my-navbar">
     <% if current_user %>
-    <div class="dropdown">
-      <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIENDLEVEL
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <div class="test2">
-          <li><%= link_to "My Profile", current_user, id: "color"%></li>
-          <li><%= link_to "New Task", new_task_path, id: "color"%></li>
-          <li><%= link_to "Tasks Feed", user_tasks_path(current_user), id: "color"%></li>
-          <li><%= link_to "Logout", '/logout', id: "color"%></li>
-        </div>
-      </ul>
-    </div>
+
+      <div class="dropdown">
+        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> FRIENDLEVEL
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <div class="test2">
+            <li><%= link_to "My Profile", current_user, id: "color"%></li>
+            <li><%= link_to "New Task", new_task_path, id: "color"%></li>
+            <li><%= link_to "Tasks Feed", user_tasks_path(current_user), id: "color"%></li>
+            <li><%= link_to "Logout", '/logout', id: "color"%></li>
+          </div>
+        </ul>
+      </div>
 
     <!-- search bar -->
     <nav class= "navbar-right">
@@ -50,25 +51,29 @@
         <% end %>
       </div>
     </nav>
-
     <!-- Button trigger modal for Friend Requests -->
     <div class="requests">
       <button type="button" class="btn btn-new btn-sm" data-toggle="modal" data-target="#friend_request">
-      Friend Requests
+        Friend Requests
+          <% if pending_friends != 0 %>
+          <span class="badge"><%= pending_friends.count %></span>
+        <% end %>
       </button>
       <button type="button" class="btn btn-new btn-sm" data-toggle="modal" data-target="#pending_tasks">
-      View Pending Tasks
+        View Pending Tasks
+        <% if pending_tasks != 0 %>
+          <span class="badge"><%= pending_tasks.count %></span>
+        <% end %>
       </button>
     </div>
 
     <% else %>
-    <nav class= "navbar navbar-fixed-top navbar-default">
-      <%= link_to "FRIENDLEVEL", root_path, id: "logo"%>
-      <%= link_to 'Signup', signup_path, id: "logo"%>
-      <% end %>
-    </nav>
+      <nav class= "navbar navbar-fixed-top navbar-default">
+        <%= link_to "FRIENDLEVEL", root_path, id: "logo"%>
+        <%= link_to 'Signup', signup_path, id: "logo"%>
+    <% end %>
+      </nav>
   </header>
-
 
   <!-- Modal for Friend Requests-->
   <% if current_user %>
