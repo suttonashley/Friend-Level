@@ -24,12 +24,28 @@ class User < ApplicationRecord
     Friendship.where(user: id, status: :accepted).map(&:friend)
   end
 
+  def self.friend_level(for_doer:, with_creator:)
+    Task.accepted.where(doer_id: for_doer, user_id: with_creator).sum(:points)
+  end
+
+  # ashley = @user
+  #
+  # Alby = current_user
+  # 
+  # mypoints = friend_level for_doer: current_user, with_creator: @user
+  #
+  # herpoints = friend_level for_doer: @user, with_creator: current_user
+  #
+  # ashleys_debt = mypoints / herpoints
+
+
   # def points_with(user)
   #   Task.where(doer_id: user.id, user_id: self.id).accepted.map(&:points).inject(:+)
   # end
   #
   # def points_for(user)
   #   Task.where(doer_id: self.id, user_id: user.id).accepted.map(&:points).inject(:+)
+  #   tasks.accepted.where()
   # end
 
   def points
