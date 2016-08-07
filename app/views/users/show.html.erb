@@ -28,11 +28,16 @@
 
   <div class="otherinfo">
     <div class="heading">
-      <h3>My Friend Meter...</h3><br>
       <% if current_user != @user %>
-        <%= @current_user_points %>
-        <%= @this_user_points %>
-        point ratio:<%= point_ratio @current_user_points, @this_user_points%>
+        <% if @current_user_points > @this_user_points %>
+        <h3>FRIEND LEVEL<span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%></h3>
+          <%= @current_user_points %>
+          <%= @this_user_points %>
+        <% else %>
+        <h3>FRIEND LEVEL<span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%></h3>
+          <%= @current_user_points %>
+          <%= @this_user_points %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -78,7 +83,7 @@
       <% if friend.first.avatar.blank? %>
         <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
       <% else %>
-        <%= image_tag friend.avatar.url(:medium), class: "img-responsive" %>
+        <%= image_tag friend.first.avatar.url(:medium), class: "img-responsive" %>
       <% end %>
       <b>
         <%= friend[0].username %>
