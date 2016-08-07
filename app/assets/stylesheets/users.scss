@@ -267,8 +267,8 @@ select {
   float:left;
   width: 35%;
   margin:2%;
-  // border: solid;
   background: black;
+  padding-top: .7em;
 }
 
 .otherinfo {
@@ -279,8 +279,7 @@ select {
 }
 
 .polaroid {
-  border: solid;
-  background-repeat: no-repeat;
+  // border: solid;
   border: solid;
   text-align: center;
   max-width: 14em;
@@ -291,16 +290,11 @@ select {
 }
 
 .polaroid2 {
-  border: solid;
-  background-repeat: no-repeat;
-  border: solid;
+  border: gray solid;
   text-align: center;
   max-width: 15em;
   background: white;
   margin-left: 2.3em;
-}
-
-.rotate {
   transform: rotate(-6deg);
 }
 

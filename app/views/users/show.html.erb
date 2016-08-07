@@ -11,14 +11,12 @@
 
   <div class="userinfo">
     <br>
-    <div class="rotate">
       <div class="polaroid2"><br>
         <% if @user.avatar.blank? %>
           <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
         <% else %>
           <%= image_tag @user.avatar.url(:medium), class: "img-responsive" %>
         <% end %>
-      </div>
       </div>
   <div class="welcome">
     <h3><b>WHAT'S UP, <%= @user.username.upcase %>!</b></h3>
