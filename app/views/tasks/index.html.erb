@@ -11,8 +11,12 @@
 
           <div class="panel panel-danger">
             <div class="panel-body">
-              <div class="text-center">
-                <img class="img-circle" src="http://placehold.it/100x100" alt="...">
+              <div>
+                  <% if t.doer.avatar.blank? %>
+                    <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-circle center-block", height: 200) %>
+                  <% else %>
+                    <%= image_tag t.doer.avatar.url(:medium), class: "img-responsive center-block", height: 200%>
+                  <% end %>
               </div>
               <hr class="panel-danger">
                 <p>

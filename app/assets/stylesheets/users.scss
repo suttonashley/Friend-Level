@@ -15,6 +15,11 @@ font-size: 3em;
  font-size: 2em;
 }
 
+.caption{
+  font-size: 2em;
+  color: black;
+}
+
 .tn {
 margin-top: 7em;
 display: relative;
@@ -269,7 +274,6 @@ select {
   background-repeat: no-repeat;
   border: solid;
   text-align: center;
-  background: white;
   max-width: 15em;
   max-height: 27em;
   margin-left: 2.3em;
@@ -316,4 +320,8 @@ select {
 
 .overlay {
 
+}
+
+.remove-friend{
+  font-size: 8px;
 }
