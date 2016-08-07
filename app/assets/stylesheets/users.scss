@@ -313,6 +313,13 @@ select {
   text-align: center;
 }
 
+.profileinfo {
+  float:left;
+  width: 70%;
+  margin: 1%;
+  text-align: center;
+}
+
 .friendlist {
   background: black;
   color: white;
@@ -320,6 +327,7 @@ select {
   padding-bottom: .1em;
   padding: .1em;
   transform: rotate(16.3deg);
+  margin-top: 3em;
   // box-shadow: 10px 10px 5px #888888;
 }
 
