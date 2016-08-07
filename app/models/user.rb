@@ -2,11 +2,15 @@ class User < ApplicationRecord
   has_secure_password
   has_many :friendships
   has_many :friends,
-           :through => :friendships
+  :through => :friendships
 
   has_many :tasks
   has_many :missions,
-           :class_name => 'Task', foreign_key: :doer_id
+  :class_name => 'Task', foreign_key: :doer_id
+
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :password, confirmation: true, presence: true, length: { in: 6..20 }
@@ -51,13 +55,13 @@ class User < ApplicationRecord
   end
 
 
-#ed's fix in the editor
-# missions.accepted.group(:creator).sum(:points).sort_by {|hsh| -hsh.values.first}[0..limit]
-#ed's version in terminal
-# s.missions.accepted.group(:creator).sum(:points).map { |k, v| {k.username => v}}.sort_by {|hsh| -hsh.values.first}
+  #ed's fix in the editor
+  # missions.accepted.group(:creator).sum(:points).sort_by {|hsh| -hsh.values.first}[0..limit]
+  #ed's version in terminal
+  # s.missions.accepted.group(:creator).sum(:points).map { |k, v| {k.username => v}}.sort_by {|hsh| -hsh.values.first}
 
-# after_action :filter
-#   def filter
+  # after_action :filter
+  #   def filter
   # if current_user == owner
   #   dont filter anything
   # elsif current_user friends owner

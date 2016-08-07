@@ -15,7 +15,11 @@
 
 <div class="signuprow">
   <div class="col-md-12 col-xs-12 col-md-offset-0 col-xs-offset-0">
-    <%= form_for :user, url: '/users' do |f| %>
+    <%= form_for @user, url: '/users', html: { multipart: true } do |f| %>
+
+
+        <%= f.file_field :avatar %>
+
 
     <%= f.label :username %>
     <%= f.text_field :username, class: 'form-control'  %>
