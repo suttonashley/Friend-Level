@@ -13,7 +13,6 @@
      <div class="tn animated finite fadeInDown">
        <!-- <#%= image_tag u.avatar.url(:thumb) %> -->
           <div class="caption">
-            <% if u.friends.map(&:id).include?(current_user.id) %>
             <p>
               <% if u.avatar.blank? %>
                 <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive center-block", height: 200) %>
@@ -21,23 +20,22 @@
                 <%= image_tag u.avatar.url(:medium), class: "img-responsive center-block", height: 200 %>
               <% end %>
             </p>
-              <p><%= link_to u.username, u %></p>
-              <p class= "remove-friend">
-                <%= link_to 'Remove Friend', friendship_path(u), :method => :delete %>
-              </p>
-            <% else %>
-            <p>
-              <% if u.avatar.blank? %>
-                <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive center-block", height: 200) %>
-              <% else %>
-                <%= image_tag u.avatar.url(:medium), class: "img-responsive center-block", height: 200 %>
+            <% case current_user.status_with(u) %>
+              <% when "NONE" %>
+                <%= u.username %>
+                <p class="add-friend">
+                  <%= button_to 'Add Friend', add_friend_path(friend: u.id), class: "btn btn-danger btn-sm"%>
+                <p>
+              <% when "accepted" %>
+                <p class= "remove-friend">
+                  <%= link_to 'Remove Friend', friendship_path(u), :method => :delete %>
+                </p>
+                <p><%= link_to u.username, u %></p>
+              <% when "pending" %>
+                <%= u.username %><br>
+                <span>Requested</span>
               <% end %>
-            </p>
-              <%= u.username %>
-              <p class="add-friend">
-                <%= button_to 'Add Friend', add_friend_path(friend: u.id), class: "btn btn-danger btn-sm"%>
               </p>
-            <% end %>
           </div>
       </div>
     </div>

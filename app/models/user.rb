@@ -20,6 +20,11 @@ class User < ApplicationRecord
     Friendship.exists?(self, user)
   end
 
+  def status_with(user)
+    return "NONE" unless Friendship.exists?(self, user)
+    Friendship.find_by(user_id: user.id, friend_id: id).status
+  end
+
   def accepted_friends
     Friendship.where(user: id, status: :accepted).map(&:friend)
   end
@@ -31,7 +36,7 @@ class User < ApplicationRecord
   # ashley = @user
   #
   # Alby = current_user
-  # 
+  #
   # mypoints = friend_level for_doer: current_user, with_creator: @user
   #
   # herpoints = friend_level for_doer: @user, with_creator: current_user

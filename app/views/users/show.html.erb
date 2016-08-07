@@ -1,9 +1,6 @@
 
 
 <body class="showpage">
-    <% unless current_user == @user || current_user.is_friends_with?(@user) %>
-      <%= button_to 'Add+', add_friend_path(friend: @user.id) %>
-    <% end %>
 
 <section>
   <!-- <div class="whostheuser"> -->
