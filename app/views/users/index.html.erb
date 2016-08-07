@@ -15,7 +15,11 @@
           <div class="caption">
             <% if u.friends.map(&:id).include?(current_user.id) %>
             <p>
-              <%= image_tag u.avatar.url(:medium), class: "img-responsive img-circle" %>
+              <% if u.avatar.blank? %>
+                <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive center-block", height: 200) %>
+              <% else %>
+                <%= image_tag u.avatar.url(:medium), class: "img-responsive center-block", height: 200 %>
+              <% end %>
             </p>
               <p><%= link_to u.username, u %></p>
               <p class= "remove-friend">
@@ -23,7 +27,11 @@
               </p>
             <% else %>
             <p>
-              <%= image_tag u.avatar.url(:medium), class: "img-responsive img-circle" %>
+              <% if u.avatar.blank? %>
+                <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive center-block", height: 200) %>
+              <% else %>
+                <%= image_tag u.avatar.url(:medium), class: "img-responsive center-block", height: 200 %>
+              <% end %>
             </p>
               <%= u.username %>
               <p class="add-friend">
@@ -38,4 +46,4 @@
 
 
 <!-- <body background="https://wallpaperscraft.com/image/point_gray_texture_55269_2560x1440.jpg"> -->
-<body background="http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/watercolor-grunge/watercolor-grunge-000053-metallic-gold.jpg">
+ <body background="http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/watercolor-grunge/watercolor-grunge-000053-metallic-gold.jpg">
