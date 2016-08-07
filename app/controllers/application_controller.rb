@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :pending_tasks,
+  helper_method :current_user, :pending_tasks, :pending_friends
 
 
   def current_user
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   def pending_tasks
     current_user.tasks.where(status: "pending", user_id: current_user.id)
+  end
+
+  def pending_friends
+    current_user.friendships.where(status:"pending", user_id: current_user.id)
   end
 
 private
