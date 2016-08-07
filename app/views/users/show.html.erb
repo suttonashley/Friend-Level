@@ -32,6 +32,11 @@
   <div class="otherinfo">
     <div class="heading">
       <h3>My Friend Meter...</h3><br>
+      <% if current_user != @user %>
+        <%= @current_user_points %>
+        <%= @this_user_points %>
+        point ratio:<%= point_ratio @current_user_points, @this_user_points%>
+      <% end %>
     </div>
   </div>
 

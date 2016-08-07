@@ -17,6 +17,8 @@ class UsersController < ApplicationController
 
   def show
     @user_pending_tasks = Task.where(status: "pending", doer_id: current_user.id)
+    @this_user_points = User.friend_level(for_doer: current_user, with_creator: @user)
+    @current_user_points = User.friend_level(for_doer: @user, with_creator: current_user)
   end
 
   def index
