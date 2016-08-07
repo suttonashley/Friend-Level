@@ -14,8 +14,12 @@
     <br>
     <div class="rotate">
       <div class="polaroid"><br>
-<%= image_tag @user.avatar.url(:medium) %> 
-    </div>
+        <% if @user.avatar.blank? %>
+          <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+        <% else %>
+          <%= image_tag @user.avatar.url(:medium), class: "img-responsive" %>
+        <% end %>
+      </div>
   <div class="welcome">
     <h3><b>WHAT'S UP, <%= @user.username.upcase %>!</b></h3>
   </div>
@@ -49,7 +53,11 @@
       </div>
     <% @user.top_friends_that_earn_points_from_you(3).each do |friend|%>
     <div class="polaroid"><br>
-      <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" width="85" height="100"></img>
+      <% if friend.first.avatar.blank? %>
+        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+      <% else %>
+        <%= image_tag friend.first.avatar.url(:medium), class: "img-responsive" %>
+      <% end %>
       <b><br>
         <%= friend[0].username %>
       </b><br>
@@ -65,7 +73,11 @@
     </div>
     <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
     <div class="polaroid"><br>
-      <img src="http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725" width="85" height="100"></img><br>
+      <% if friend.first.avatar.blank? %>
+        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+      <% else %>
+        <%= image_tag friend.avatar.url(:medium), class: "img-responsive" %>
+      <% end %>
       <b>
         <%= friend[0].username %>
       </b><br>
