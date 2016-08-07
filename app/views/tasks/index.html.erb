@@ -19,11 +19,14 @@
                   <% end %>
               </div>
               <hr class="panel-danger">
-                <p>
-                  <b><%= t.doer.username.upcase %></b> for <b><%= t.creator.username.upcase %></b>
+                <p align="center">
+                  <strong>COMPLETE!</strong>
                 </p>
                 <p>
-                  <strong>Completed:</strong> <%= t.title %>
+                  <b><%= t.doer.username.upcase %></b> helped out <b><%= t.creator.username.upcase %>.</b>
+                </p>
+                <p>
+                  <strong>Task:</strong> <%= t.title %>
                 </p>
 
             </div>

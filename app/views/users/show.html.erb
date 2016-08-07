@@ -6,25 +6,25 @@
     <% end %>
 
 <section>
-  <!-- <div class="whostheuser"> -->
 
 <section>
 
   <div class="userinfo">
     <br>
     <div class="rotate">
-      <div class="polaroid"><br>
+      <div class="polaroid2"><br>
         <% if @user.avatar.blank? %>
           <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
         <% else %>
           <%= image_tag @user.avatar.url(:medium), class: "img-responsive" %>
         <% end %>
       </div>
+      </div>
   <div class="welcome">
     <h3><b>WHAT'S UP, <%= @user.username.upcase %>!</b></h3>
   </div>
-  </div>
 
+</div>
 </section>
 
 <section>
@@ -37,7 +37,6 @@
 
 </section>
 
-  <!-- </div> -->
 </section>
 
 
@@ -54,7 +53,7 @@
     <% @user.top_friends_that_earn_points_from_you(3).each do |friend|%>
     <div class="polaroid"><br>
       <% if friend.first.avatar.blank? %>
-        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive frilistpic") %>
       <% else %>
         <%= image_tag friend.first.avatar.url(:medium), class: "img-responsive" %>
       <% end %>
@@ -69,12 +68,12 @@
 
   <section>
     <div class="friendlist2">
-      <h3> Top Friends Who <u>You Do The Most For </h3>
+      <h3> Top Friends Who You Do The Most For </h3>
     </div>
     <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
     <div class="polaroid"><br>
       <% if friend.first.avatar.blank? %>
-        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive frilistpic") %>
       <% else %>
         <%= image_tag friend.avatar.url(:medium), class: "img-responsive" %>
       <% end %>
