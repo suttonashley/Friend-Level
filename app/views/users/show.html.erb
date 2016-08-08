@@ -29,25 +29,25 @@
 
       <% if current_user != @user %>
         <% if @current_user_points > @this_user_points %>
-        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%>%</h3>
+        <h3 class="fl">FRIENDLEVEL <span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%>%</h3>
           There is a<%= @current_user_points %>/<%= @this_user_points %> Point Ratio.
 
           <% elsif @current_user_points == @this_user_points %>
-          <h3>FRIENDLEVEL EQUAL </h3>
+          <h3 class="fl">FRIENDLEVEL EQUAL </h3>
             There is a <%= @current_user_points %>/<%= @this_user_points %> Point Ratio.
 
         <% else %>
-        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-bottom"></span> <%= point_ratio @current_user_points, @this_user_points%>%</h3>
+        <h1 class="fl">FRIENDLEVEL <span class="glyphicon glyphicon-triangle-bottom"></span> <%= point_ratio @current_user_points, @this_user_points%>%</h1>
           There is a <strong><%= @current_user_points %>/<%= @this_user_points %></strong> Point Ratio.
         <% end %>
 
-<div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
+<br><div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
   <div class="progress-bar" role="progressbar" aria-valuenow="<%= @current_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 15em; width: 2%; background: #b30000;">
     <%= @current_user_points %>
   </div>
 </div>
 <div class="cup">
-  You have accummulated this many points for doing tasks for <%= @user.username %>.
+  You have accumulated this many points for doing tasks for <%= @user.username %>.
 </div><br>
 
 <div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
@@ -56,7 +56,7 @@
   </div>
 </div>
 <div class="tup">
-   <%= @user.username %> has accummulated this many points for doing tasks for you.
+   <%= @user.username %> has accumulated this many points for doing tasks for you.
 </div><br><br>
 <% end %>
 
