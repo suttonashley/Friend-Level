@@ -4,7 +4,7 @@
 <h1 class="text-center">Task Feed</h1>
 
 <div class="container">
-  <% @task.each_slice(3) do |task| %>
+  <% @tasks.each_slice(3) do |task| %>
     <div class="row">
       <% task.each do |t| %>
         <div class="col-sm-4 col-md-4">
@@ -18,7 +18,6 @@
                     <%= image_tag t.doer.avatar.url(:medium), class: "img-responsive center-block", height: 200%>
                   <% end %>
               </div>
-
               <hr class="panel-danger">
                 <p align="center">
                   <strong>COMPLETE!</strong>
@@ -28,7 +27,6 @@
                 <p>
                   <strong>Task:</strong> <%= t.title %>
                 </p>
-
             </div>
           </div>
         </div>

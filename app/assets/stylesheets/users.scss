@@ -34,11 +34,13 @@ font-size: 3em;
 }
 
 .list1{
-  background-color: black
+  background-color: black;
+  border-radius: 5%;
 }
 
 .pendingcom{
-  background-color: black
+  background-color: black;
+  border-radius: 5%;
 }
 
 .tn {
@@ -292,16 +294,18 @@ select {
   margin:2%;
   background: black;
   padding-top: .7em;
+  border-radius: 3%;
 }
 
 .otherinfo {
   float: right;
   width: 55%;
   margin:2%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 25px;
   color: white;
   text-align: center;
+  border-radius: 3%;
   // max-height: 20em;
 }
 
@@ -316,10 +320,10 @@ select {
 }
 
 .polaroid2 {
-  border: gray solid;
+  // border: gray solid;
   text-align: center;
   max-width: 15em;
-  background: white;
+  // background: white;
   margin-left: 5em;
   transform: rotate(-6deg);
 }
@@ -355,6 +359,7 @@ select {
   transform: rotate(16.3deg);
   margin-top: 3em;
   font-family: 'Salsa', cursive;
+  border-radius: 3%;
   // box-shadow: 10px 10px 5px #888888;
 }
 
@@ -366,6 +371,7 @@ select {
   padding-bottom: .1em;
   transform: rotate(-7deg);
   font-family: 'Salsa', cursive;
+  border-radius: 3%;
   // box-shadow: 10px 10px 5px #888888;
 }
 

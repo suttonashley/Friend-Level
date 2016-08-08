@@ -37,7 +37,6 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <div class="test2">
             <li><%= link_to "My Profile", current_user, id: "color"%></li>
-            <!-- <li><#%= link_to "New Task", new_task_path, id: "color"%></li> -->
             <li><%= link_to "Tasks Feed", user_tasks_path(current_user), id: "color"%></li>
             <li><%= link_to "Logout", '/logout', id: "color"%></li>
           </div>
@@ -48,7 +47,7 @@
     <nav class= "navbar-right">
       <div class="test">
         <button type="button" class="btn btn-new btn-sm" data-toggle="modal" data-target="#new_task">
-          New Kindness
+          <b>+ New Task</b>
         </button>
         <%= form_tag search_path, class: "search-form" do %>
         <%= search_field_tag :term,'', class: "search-bar" %>
@@ -117,7 +116,7 @@
 </div>
 
 <%= render partial: "/layouts/pending_tasks" %>
-<%= render partial: "layouts/form" %>
+<%= render partial: "layouts/form", locals: { task: @task } %>
 
 </body>
 </html>
