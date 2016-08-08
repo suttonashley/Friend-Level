@@ -24,10 +24,12 @@ font-size: 3em;
 .search {
   margin-left: 2em;
   margin-top: 6em;
+  font-family: 'Salsa', cursive;
 }
 
 .yourresults {
   text-align: center;
+  font-family: 'Salsa', cursive;
   // margin-top: 10em;
 }
 
@@ -80,11 +82,6 @@ body.modal {
     /* must be half of the width, minus scrollbar on the left (30px) */
     margin-left: 20em;
     height: 35em;
-}
-
-.welcome {
-  color: black;
-  text-align: center;
 }
 
 .friendl {
@@ -150,7 +147,7 @@ body.modal {
 // }
 
 .text-center {
-  margin-top: 2em;
+  font-family: 'Salsa', cursive;
 }
 
 // Headers
@@ -196,6 +193,7 @@ body.modal {
   font-size: 1.5em;
   color: black;
   margin-left: .5em;
+  font-family: 'Salsa', cursive;
 }
 
 .dropdown {
@@ -273,6 +271,7 @@ select {
 
 .welcome {
   color: white;
+  font-family: 'Salsa', cursive;
 }
 
 .userinfo {
@@ -343,6 +342,7 @@ select {
   padding: .1em;
   transform: rotate(16.3deg);
   margin-top: 3em;
+  font-family: 'Salsa', cursive;
   // box-shadow: 10px 10px 5px #888888;
 }
 
@@ -353,6 +353,7 @@ select {
   padding: .1em;
   padding-bottom: .1em;
   transform: rotate(-7deg);
+  font-family: 'Salsa', cursive;
   // box-shadow: 10px 10px 5px #888888;
 }
 
