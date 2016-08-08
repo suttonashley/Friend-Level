@@ -19,10 +19,6 @@
   margin-top: 55px;
 }
 
-.glyphicon-user{
-  font-size: 21px
-
-}
 #term.search-bar{
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -38,7 +34,7 @@
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid rgba(81, 203, 238, 1);
-  border: 5px solid tomato;
+  border: 3.3px solid #b30000;
   width: 220px
 }
 
