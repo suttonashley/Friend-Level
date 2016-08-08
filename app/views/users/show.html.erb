@@ -17,7 +17,11 @@
         <% end %>
       </div>
   <div class="welcome">
-    <h3><b>WHAT'S UP, <%= @user.username.upcase %>!</b></h3>
+    <% if current_user == @user %>
+      <h3><b>WELCOME, <%= @user.username.upcase %>!</b></h3>
+    <% else %>
+      <h3><b><%= @user.username.upcase %></b></h3>
+    <% end %>
   </div>
 
 </div>
@@ -30,7 +34,7 @@
       <% if current_user != @user %>
         <% if @current_user_points > @this_user_points %>
         <h3 class="fl">FRIENDLEVEL <span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%>%</h3>
-          There is a<%= @current_user_points %>/<%= @this_user_points %> Point Ratio.
+          There is a <b><%= @current_user_points %>/<%= @this_user_points %></b> Point Ratio.
 
           <% elsif @current_user_points == @this_user_points %>
           <h3 class="fl">FRIENDLEVEL EQUAL </h3>
@@ -141,7 +145,6 @@
               Worth <%= task.points %> Point(s)<br>
             </b>
             <% if current_user.id == task.user_id %>
-              (<%= link_to 'Edit', edit_user_task_path(current_user, task) %>)
               (<%= link_to 'Delete', task, :method => :delete %>)
             <% else %>
               <%= link_to 'Pick up this task', request_task_path(current_user, task), :method => :post %>
