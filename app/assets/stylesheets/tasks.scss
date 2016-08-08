@@ -119,7 +119,12 @@ body.taskformbody {
   font-family: 'Salsa', cursive;
 }
 
-div.panel-danger{
+div.panel-danger {
   border-radius: 30px;
   border-color: black;
+  border-width: .3em;
+}
+
+hr.panel-danger {
+  border-width: .2em;
 }
