@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+  before_action :authorize
 
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id])
