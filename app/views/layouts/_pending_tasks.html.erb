@@ -19,7 +19,7 @@
                 Worth <%= task.points %> Point(s)
               </b>
                 <%= button_to 'Completed', accept_task_path(task.id), :method => :post,class: "btn btn-danger btn-sm"%><br>
-                <%= button_to 'Reject', decline_task_path(task.id), :method => :post, class: "btn btn-danger btn-sm" %>
+                <%= button_to 'Reject', decline_task_path(task.id), :method => :post, class: "btn btn-danger btn-sm" %><br>
               <!-- </li> -->
               <% end %>
             <% end %>
