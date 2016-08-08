@@ -15,6 +15,11 @@
  */
 
 
+.navlogo {
+  color: white;
+  font-size: .6em;
+}
+
 .page-body {
   margin-top: 55px;
 }
@@ -48,4 +53,19 @@
 
 #myModalLabel {
   text-align: center;
+}
+
+.navbar {
+    position: relative;
+}
+.navlogo {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+    color: white;
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+    text-outline: #b30000;
+
 }

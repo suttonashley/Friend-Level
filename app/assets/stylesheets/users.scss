@@ -96,12 +96,16 @@ body.modal {
 
 .friendl {
   text-align: center;
-  margin-top: 1.6em;
-  font-size: 5em;
-  // font-family: 'Mogra', cursive;
-  // font-family: 'Oregano', cursive;
-  font-family: 'Salsa', cursive;
-  // font-family: 'Paprika', cursive;
+  font-size: 12em;
+  font-family: 'Pacifico', cursive;
+}
+
+.slogan {
+  font-size: 2em;
+  text-align: center;
+  color: white;
+  margin-top: -2em;
+  // margin-right: 3.8em;
 }
 
 // Sign-Up Page
@@ -155,10 +159,6 @@ body.modal {
 //   margin-top: 6em;
 //   margin-left: .5em;
 // }
-
-.text-center {
-  font-family: 'Salsa', cursive;
-}
 
 // Headers
 
