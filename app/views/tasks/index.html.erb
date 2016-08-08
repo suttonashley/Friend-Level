@@ -4,7 +4,7 @@
 <h1 class="text-center">Task Feed</h1>
 
 <div class="container">
-  <% @task.each_slice(3) do |task| %>
+  <% @tasks.each_slice(3) do |task| %>
     <div class="row">
       <% task.each do |t| %>
         <div class="col-sm-4 col-md-4">

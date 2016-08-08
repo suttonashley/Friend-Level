@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @task = Task.where(status: "accepted")
+    @tasks = Task.where(status: "accepted")
   end
 
   def destroy
