@@ -29,22 +29,20 @@
 
       <% if current_user != @user %>
         <% if @current_user_points > @this_user_points %>
-        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%></h3>
-          <%= @current_user_points %>
-          <%= @this_user_points %>
+        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%>%</h3>
+          There is a<%= @current_user_points %>/<%= @this_user_points %> Point Ratio.
 
           <% elsif @current_user_points == @this_user_points %>
-          <h3>FRIENDLEVEL <span class="glyphicon glyphicon-heart"></span> <%= point_ratio @current_user_points, @this_user_points%></h3>
-            <%= @current_user_points %>
-            <%= @this_user_points %>
+          <h3>FRIENDLEVEL EQUAL </h3>
+            There is a <%= @current_user_points %>/<%= @this_user_points %> Point Ratio.
 
         <% else %>
-        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-bottom"></span> <%= point_ratio @current_user_points, @this_user_points%></h3>
-          There is a <strong><%= @current_user_points %>/<%= @this_user_points %></strong> Point Ratio
+        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-bottom"></span> <%= point_ratio @current_user_points, @this_user_points%>%</h3>
+          There is a <strong><%= @current_user_points %>/<%= @this_user_points %></strong> Point Ratio.
         <% end %>
 
 <div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
-  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @current_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 10em; width: 2%; background: #b30000;">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @current_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 15em; width: 2%; background: #b30000;">
     <%= @current_user_points %>
   </div>
 </div>
@@ -53,7 +51,7 @@
 </div><br>
 
 <div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
-  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @this_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 20em; width: 2%; background: #b30000;">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @this_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 16em; width: 2%; background: #b30000;">
     <%= @this_user_points %>
   </div>
 </div>
