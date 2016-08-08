@@ -91,6 +91,10 @@ body.modal {
   text-align: center;
   margin-top: 1.6em;
   font-size: 5em;
+  // font-family: 'Mogra', cursive;
+  // font-family: 'Oregano', cursive;
+  font-family: 'Salsa', cursive;
+  // font-family: 'Paprika', cursive;
 }
 
 // Sign-Up Page
@@ -149,13 +153,6 @@ body.modal {
   margin-top: 2em;
 }
 
-// Tasks Feed
-// Friend Index
-// .user {
-//   text-align: center;
-//   text-decoration: none;
-// }
-
 // Headers
 
 .requests {
@@ -189,11 +186,6 @@ body.modal {
   // color: #fff;
   text-decoration: none;
 }
-
-// .header {
-//   font-size: 1em;
-//   text-align: right;
-// }
 
 #dropdownMenu1 {
   margin-left: 1em;
@@ -257,6 +249,10 @@ select {
   width: 20em;
   border-radius: .5em;
   height: 2.5em;
+}
+
+.userlogin {
+  font-family: 'Salsa', cursive;
 }
 
 // Profile Page
