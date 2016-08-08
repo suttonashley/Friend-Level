@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
+  
+
   root 'sessions#new'
 
   post '/add_friend' => 'friendships#add_friend'

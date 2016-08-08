@@ -37,3 +37,11 @@
   border: 3.3px solid #b30000;
   width: 220px
 }
+
+.search-form{
+  display: inline-block;
+}
+
+.newtaskform{
+  margin: 0;
+}
