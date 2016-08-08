@@ -89,10 +89,10 @@
       <% else %>
         <%= image_tag friend.first.avatar.url(:medium), class: "img-responsive" %>
       <% end %>
-      <b><br>
+      <b>
         <%= friend[0].username %>
       </b><br>
-      <%= friend[1] %><br><br>
+      Earned <b><%= friend[1] %></b> Points<br>From You!
     </div><br>
     <% end %>
 
@@ -112,7 +112,7 @@
       <b>
         <%= friend[0].username %>
       </b><br>
-      <%= friend[1] %><br><br>
+      Gave You <b><%= friend[1] %></b> Points<br><br>
     </div>
     <% end %>
 
