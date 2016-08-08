@@ -3,14 +3,13 @@
 <body class="showpage">
 
 <section>
-  <!-- <div class="whostheuser"> -->
+  <div class="profileinfo">
 
 <section>
 
   <div class="userinfo">
     <br>
-    <div class="rotate">
-      <div class="polaroid"><br>
+      <div class="polaroid2"><br>
         <% if @user.avatar.blank? %>
           <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
         <% else %>
@@ -20,31 +19,56 @@
   <div class="welcome">
     <h3><b>WHAT'S UP, <%= @user.username.upcase %>!</b></h3>
   </div>
-  </div>
 
+</div>
 </section>
 
 <section>
-
   <div class="otherinfo">
     <div class="heading">
+
       <% if current_user != @user %>
         <% if @current_user_points > @this_user_points %>
-        <h3>FRIEND LEVEL<span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%></h3>
+        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%></h3>
           <%= @current_user_points %>
           <%= @this_user_points %>
-        <% else %>
-        <h3>FRIEND LEVEL<span class="glyphicon glyphicon-triangle-top"></span><%= point_ratio @current_user_points, @this_user_points%></h3>
-          <%= @current_user_points %>
-          <%= @this_user_points %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
 
+          <% elsif @current_user_points == @this_user_points %>
+          <h3>FRIENDLEVEL <span class="glyphicon glyphicon-heart"></span> <%= point_ratio @current_user_points, @this_user_points%></h3>
+            <%= @current_user_points %>
+            <%= @this_user_points %>
+
+        <% else %>
+        <h3>FRIENDLEVEL <span class="glyphicon glyphicon-triangle-bottom"></span> <%= point_ratio @current_user_points, @this_user_points%></h3>
+          There is a <strong><%= @current_user_points %>/<%= @this_user_points %></strong> Point Ratio
+        <% end %>
+
+<div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @current_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 10em; width: 2%; background: #b30000;">
+    <%= @current_user_points %>
+  </div>
+</div>
+<div class="cup">
+  You have accummulated this many points for doing tasks for <%= @user.username %>.
+</div><br>
+
+<div class="progress" style="width:500px;margin-bottom:0px;margin-top:20px;">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= @this_user_points %>" aria-valuemin="0" aria-valuemax="9000" style="min-width: 20em; width: 2%; background: #b30000;">
+    <%= @this_user_points %>
+  </div>
+</div>
+<div class="tup">
+   <%= @user.username %> has accummulated this many points for doing tasks for you.
+</div><br><br>
+<% end %>
+
+
+    </div>
+
+  </div>
 </section>
 
-  <!-- </div> -->
+</div>
 </section>
 
 
@@ -61,15 +85,15 @@
     <% @user.top_friends_that_earn_points_from_you(3).each do |friend|%>
     <div class="polaroid"><br>
       <% if friend.first.avatar.blank? %>
-        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive frilistpic") %>
       <% else %>
         <%= image_tag friend.first.avatar.url(:medium), class: "img-responsive" %>
       <% end %>
-      <b><br>
+      <b>
         <%= friend[0].username %>
       </b><br>
-      <%= friend[1] %><br><br>
-    </div>
+      Earned <b><%= friend[1] %></b> Points<br>From You!
+    </div><br>
     <% end %>
 
   </section>
@@ -81,14 +105,14 @@
     <% @user.top_friends_that_you_earn_points_from(3).each do |friend|%>
     <div class="polaroid"><br>
       <% if friend.first.avatar.blank? %>
-        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive") %>
+        <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive frilistpic") %>
       <% else %>
         <%= image_tag friend.first.avatar.url(:medium), class: "img-responsive" %>
       <% end %>
       <b>
         <%= friend[0].username %>
       </b><br>
-      <%= friend[1] %><br><br>
+      Gave You <b><%= friend[1] %></b> Points<br><br>
     </div>
     <% end %>
 

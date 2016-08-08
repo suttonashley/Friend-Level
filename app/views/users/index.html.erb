@@ -2,13 +2,16 @@
 
 <body class="index-page">
 
-<% params[:term] %>
-
-<div class="rearchresults">
+<div class="search">
+  <h3>Showing search results for <%= params[:term] %>.</h3>
 </div>
-
-
   <div class="card">
+
+    <div class="yourresults animated finite bounceInDown">
+        <h1>Your Search Results...</h1>
+    </div>
+
+
     <% @users.each do |u|%>
      <div class="col-sm-6 col-md-4 col-md-offset-4">
        <div class="tn animated finite fadeInDown">
@@ -45,5 +48,4 @@
   </div>
 
 
-</body>
-<!-- <body background="https://wallpaperscraft.com/image/point_gray_texture_55269_2560x1440.jpg"> -->
+<body background="http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/watercolor-grunge/watercolor-grunge-000053-metallic-gold.jpg">

@@ -18,12 +18,15 @@
                     <%= image_tag t.doer.avatar.url(:medium), class: "img-responsive center-block", height: 200%>
                   <% end %>
               </div>
-              <hr class="panel-danger"> 
+
+              <hr class="panel-danger">
+                <p align="center">
+                  <strong>COMPLETE!</strong>
                 <p>
-                  <b><%= t.doer.username.upcase %></b> for <b><%= t.creator.username.upcase %></b>
+                  <b><%= t.doer.username.upcase %></b> helped out <b><%= t.creator.username.upcase %>.</b>
                 </p>
                 <p>
-                  <strong>Completed:</strong> <%= t.title %>
+                  <strong>Task:</strong> <%= t.title %>
                 </p>
 
             </div>
