@@ -2,46 +2,48 @@
 
 <body class="index-page">
 
-<%= params[:term] %>
+<% params[:term] %>
 
 <div class="rearchresults">
-  <h1>Your Search Results...</h>
 </div>
 
-<% @users.each do |u|%>
+
   <div class="card">
-   <div class="col-sm-6 col-md-4 col-md-offset-4">
-     <div class="tn animated finite fadeInDown">
-       <!-- <#%= image_tag u.avatar.url(:thumb) %> -->
-          <div class="caption">
-            <p>
-              <% if u.avatar.blank? %>
-                <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive center-block", height: 200) %>
-              <% else %>
-                <%= image_tag u.avatar.url(:medium), class: "img-responsive center-block", height: 200 %>
-              <% end %>
-            </p>
-            <% case current_user.status_with(u) %>
-              <% when "NONE" %>
-                <%= u.username %>
-                <p class="add-friend">
-                  <%= button_to 'Add Friend', add_friend_path(friend: u.id), class: "btn btn-danger btn-sm"%>
-                <p>
-              <% when "accepted" %>
-                <p class= "remove-friend">
-                  <%= link_to 'Remove Friend', friendship_path(u), :method => :delete %>
-                </p>
-                <p><%= link_to u.username, u %></p>
-              <% when "pending" %>
-                <%= u.username %><br>
-                <span>Requested</span>
-              <% end %>
+    <% @users.each do |u|%>
+     <div class="col-sm-6 col-md-4 col-md-offset-4">
+       <div class="tn animated finite fadeInDown">
+            <div class="caption">
+              <p>
+                <% if u.avatar.blank? %>
+                  <%= image_tag("http://vignette4.wikia.nocookie.net/dragcave/images/6/6e/No_avatar.jpg/revision/latest?cb=20140427211725", class: "img-responsive center-block", height: 200) %>
+                <% else %>
+                  <%= image_tag u.avatar.url(:medium), class: "img-responsive center-block", height: 200 %>
+                <% end %>
               </p>
-          </div>
+              <hr>
+              <% case current_user.status_with(u) %>
+                <% when "NONE" %>
+                  <%= u.username %>
+                  <p class="add-friend">
+                    <%= button_to 'Add Friend', add_friend_path(friend: u.id), class: "btn btn-danger btn-sm"%>
+                  </p>
+                  <p>
+                <% when "accepted" %>
+                  <p><%= link_to u.username, u %></p>
+                  <p class= "remove-friend">
+                    <%= link_to 'remove friend', friendship_path(u), :method => :delete %>
+                  </p>
+                <% when "pending" %>
+                  <%= u.username %><br>
+                  <span>Requested</span>
+                <% end %>
+                </p>
+            </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
+
 
 </body>
 <!-- <body background="https://wallpaperscraft.com/image/point_gray_texture_55269_2560x1440.jpg"> -->
