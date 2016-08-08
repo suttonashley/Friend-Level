@@ -45,3 +45,7 @@
 .newtaskform{
   margin: 0;
 }
+
+#myModalLabel {
+  text-align: center;
+}
