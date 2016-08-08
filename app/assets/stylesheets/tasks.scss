@@ -28,10 +28,9 @@ body.taskindback {
 }
 
 body.new-task{
-    background: url("http://www.nataliaria.com/wp-content/uploads/2014/08/play2.jpg");
-    // background-repeat: cover;
-
-
+    background: url("http://www.wallpaperhive.net/resize.php?id=1432") no-repeat;
+    background-size: cover;
+    height: calc(100vh - 140px);
 }
 
 .createtasknew {
@@ -55,8 +54,6 @@ body.taskin {
 body.taskformbody {
   background: url("http://cdn.pcwallart.com/images/gold-wallpaper-3.jpg" fixed no-repeat);
 }
-
-// Tasks
 
 
 
