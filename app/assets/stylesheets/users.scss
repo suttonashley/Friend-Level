@@ -18,6 +18,29 @@ font-size: 3em;
 .caption{
   font-size: 2em;
   color: black;
+  // border: solid black;
+}
+
+.search {
+  margin-left: 2em;
+  margin-top: 6em;
+  font-family: 'Salsa', cursive;
+}
+
+.yourresults {
+  text-align: center;
+  font-family: 'Salsa', cursive;
+  // margin-top: 10em;
+}
+
+.list1{
+  background-color: black;
+  border-radius: 4%;
+}
+
+.pendingcom{
+  background-color: black;
+  border-radius: 4%;
 }
 
 .tn {
@@ -29,8 +52,6 @@ padding-bottom: 1em;
 }
 
 .card {
-  color: white;
-  border: Grey;
   text-align: center;
 }
 
@@ -53,6 +74,12 @@ body.taskfeed {
   margin-top: 6em;
 }
 
+body.index-page {
+  background: url("http://www.wallpaperhive.net/resize.php?id=1432") no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 body.showpage {
   background: url("http://hdwallpaperspretty.com/wp-content/gallery/cork-wallpaper/cork-board-1024x768-aluminium-framed-cork-noticeboard-urumix.com.jpg") no-repeat;
   margin-top: 6em;
@@ -67,17 +94,19 @@ body.modal {
     height: 35em;
 }
 
-.welcome {
-  color: black;
+.friendl {
   text-align: center;
+  font-size: 12em;
+  font-family: 'Pacifico', cursive;
 }
 
-.friendl {
+.slogan {
+  // font-family: 'Pacifico', cursive;
+  font-size: 1.5em;
   // text-align: left;
-  // text-align: center;
-  margin-top: 1.6em;
-  // margin-left: 1.5em;
-  font-size: 5em;
+  margin-right: 1em;
+  padding-top: .5em;
+  // color: black;
 }
 
 // Sign-Up Page
@@ -92,9 +121,7 @@ body.modal {
   margin-top: 2em;
 }
 
-
 // Tasks from the Task.scss
-
 .postit {
   background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
   background-size: 250px 250px;
@@ -113,33 +140,26 @@ body.modal {
   font-size: 1.3em;
 }
 
-// User Index Search Page
-.looking {
-  text-align: center;
-  margin-top: 7em;
-}
-
-.userlist {
-  text-align: center;
-}
-
-.results {
-  font-size: 5em;
-  text-align: center;
-}
-
-// Tasks Feed
-.tasksfeed {
-  margin-top: 6em;
-  margin-left: .5em;
-}
+// // User Index Search Page
+// .looking {
+//   text-align: center;
+//   margin-top: 7em;
+// }
+//
+// .userlist {
+//   text-align: center;
+// }
+//
+// .results {
+//   font-size: 5em;
+//   text-align: center;
+// }
 
 // Tasks Feed
-// Friend Index
-.user {
-  text-align: center;
-  text-decoration: none;
-}
+// .tasksfeed {
+//   margin-top: 6em;
+//   margin-left: .5em;
+// }
 
 // Headers
 
@@ -175,15 +195,6 @@ body.modal {
   text-decoration: none;
 }
 
-.header {
-  font-size: 1em;
-  text-align: right;
-  // padding: 1em;
-  // padding-right: 2em;
-  // padding-top: 1.4em;
-
-}
-
 #dropdownMenu1 {
   margin-left: 1em;
   margin-top: .8em;
@@ -193,6 +204,7 @@ body.modal {
   font-size: 1.5em;
   color: black;
   margin-left: .5em;
+  font-family: 'Salsa', cursive;
 }
 
 .dropdown {
@@ -209,7 +221,7 @@ body.modal {
 }
 
 .my-navbar{
-    background-color:black;
+    background-color: black;
     border-radius:0;
 }
 
@@ -248,37 +260,72 @@ select {
   height: 2.5em;
 }
 
+.userlogin {
+  font-family: 'Salsa', cursive;
+}
+
 // Profile Page
+
+.fl {
+  font-family: 'Salsa', cursive;
+}
+
+.progress, .progress-bar {
+  color: black;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.cup {
+  font-size: .6em;
+}
+
+.tup {
+  font-size: .6em;
+}
 
 .welcome {
   color: white;
+  font-family: 'Salsa', cursive;
 }
 
 .userinfo {
   float:left;
   width: 35%;
   margin:2%;
-  // border: solid;
   background: black;
+  padding-top: .7em;
+  border-radius: 3%;
 }
 
 .otherinfo {
   float: right;
   width: 55%;
   margin:2%;
-  border: solid;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  border-radius: 3%;
+  // max-height: 20em;
 }
 
 .polaroid {
-  border: solid;
-  background-repeat: no-repeat;
+  // border: solid;
   border: solid;
   text-align: center;
   max-width: 15em;
+  background: white;
   margin-left: 2.3em;
+  margin: 0 auto;
 }
 
-.rotate {
+.polaroid2 {
+  // border: gray solid;
+  text-align: center;
+  max-width: 15em;
+  // background: white;
+  margin-left: 5em;
   transform: rotate(-6deg);
 }
 
@@ -297,6 +344,13 @@ select {
   text-align: center;
 }
 
+.profileinfo {
+  float:left;
+  width: 70%;
+  margin: 1%;
+  text-align: center;
+}
+
 .friendlist {
   background: black;
   color: white;
@@ -304,6 +358,9 @@ select {
   padding-bottom: .1em;
   padding: .1em;
   transform: rotate(16.3deg);
+  margin-top: 3em;
+  font-family: 'Salsa', cursive;
+  border-radius: 3%;
   // box-shadow: 10px 10px 5px #888888;
 }
 
@@ -314,7 +371,14 @@ select {
   padding: .1em;
   padding-bottom: .1em;
   transform: rotate(-7deg);
+  font-family: 'Salsa', cursive;
+  border-radius: 3%;
   // box-shadow: 10px 10px 5px #888888;
+}
+
+.frilistpic {
+  padding: 3.5em;
+  margin-top: -4em;
 }
 
 .overlay {
@@ -323,4 +387,11 @@ select {
 
 .remove-friend{
   font-size: 8px;
+}
+
+.fadeInDown{
+  border-radius: 25px;
+  background-color: white;
+  border-color: black;
+  border-style:solid;
 }

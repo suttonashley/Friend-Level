@@ -1,10 +1,9 @@
 
 <body class="taskindback">
 
-<h1 class="text-center">Task Feed</h1>
 
 <div class="container">
-  <% @task.each_slice(3) do |task| %>
+  <% @tasks.each_slice(3) do |task| %>
     <div class="row">
       <% task.each do |t| %>
         <div class="col-sm-4 col-md-4">
@@ -19,17 +18,17 @@
                   <% end %>
               </div>
               <hr class="panel-danger">
+                <p align="center">
+                  <strong>COMPLETE!</strong>
                 <p>
-                  <b><%= t.doer.username.upcase %></b> for <b><%= t.creator.username.upcase %></b>
+                  <b><%= t.doer.username.upcase %></b> helped out <b><%= t.creator.username.upcase %>.</b>
                 </p>
                 <p>
-                  <strong>Completed:</strong> <%= t.title %>
+                  <strong>Task:</strong> <%= t.title %>
                 </p>
-
             </div>
           </div>
         </div>
       <% end %>
     </div>
   <% end %>
-</div>

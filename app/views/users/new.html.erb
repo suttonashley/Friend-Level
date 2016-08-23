@@ -1,25 +1,25 @@
 <!--Sign up form for :user that includes username and password-->
 
 <body class="signuppic">
-<div class="col-md-4 col-xs-12 col-md-offset-1 col-xs-offset-0">
 
-<div class="friendl">
-  <p>
-    Friend Level
-  </p>
-</div>
+  <div class="friendl">
+    <p>
+      FriendLevel
+    </p>
+  </div>
+
+<div class="col-md-4 col-xs-12 col-md-offset-1 col-xs-offset-0">
 <div class="signup animated infinite tada">
   <h2>Signup!</h2>
 </div>
 
 
 <div class="signuprow">
-  <div class="col-md-12 col-xs-12 col-md-offset-0 col-xs-offset-0">
+  <!-- <div class="col-md-12 col-xs-12 col-md-offset-0 col-xs-offset-0"> -->
     <%= form_for @user, url: '/users', html: { multipart: true } do |f| %>
 
-
-        <%= f.file_field :avatar %>
-
+    <%= f.label :Share_A_Friendly_Pic! %>
+    <%= f.file_field :avatar %><br>
 
     <%= f.label :username %>
     <%= f.text_field :username, class: 'form-control'  %>
@@ -34,5 +34,5 @@
     <% end %>
   </div>
 </div>
-</div>
+<!-- </div> -->
 </body>

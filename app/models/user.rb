@@ -9,7 +9,7 @@ class User < ApplicationRecord
   :class_name => 'Task', foreign_key: :doer_id
 
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { small: "160x160", medium: "200x200>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }
@@ -18,6 +18,11 @@ class User < ApplicationRecord
 
   def is_friends_with?(user)
     Friendship.exists?(self, user)
+  end
+
+  def status_with(user)
+    return "NONE" unless Friendship.exists?(self, user)
+    Friendship.find_by(user_id: user.id, friend_id: id).status
   end
 
   def accepted_friends
@@ -31,7 +36,7 @@ class User < ApplicationRecord
   # ashley = @user
   #
   # Alby = current_user
-  # 
+  #
   # mypoints = friend_level for_doer: current_user, with_creator: @user
   #
   # herpoints = friend_level for_doer: @user, with_creator: current_user

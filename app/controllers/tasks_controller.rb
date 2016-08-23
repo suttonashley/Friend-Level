@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authorize
   before_action :set_task, only: [:update]
   before_action :set_task_with_user, only: [:edit]
 
@@ -26,7 +27,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @task = Task.where(status: "accepted")
+    @tasks = Task.where(status: "accepted")
   end
 
   def destroy

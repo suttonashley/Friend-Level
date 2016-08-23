@@ -15,11 +15,57 @@
  */
 // @import 'bootstrap/glyphicons';
 
+.navlogo {
+  color: white;
+  font-size: .6em;
+}
+
 .page-body {
   margin-top: 55px;
 }
 
-.glyphicon-user{
-  font-size: 21px
+#term.search-bar{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+#term.search-bar:focus{
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+  border: 3.3px solid #b30000;
+  width: 220px
+}
+
+.search-form{
+  display: inline-block;
+}
+
+.newtaskform{
+  margin: 0;
+}
+
+#myModalLabel {
+  text-align: center;
+}
+
+.navbar {
+    position: relative;
+}
+.navlogo {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+    color: white;
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+    text-outline: #b30000;
 
 }

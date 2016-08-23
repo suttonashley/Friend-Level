@@ -1,12 +1,15 @@
 <!--Login Form that includes username and password-->
 
 <body class="sessions">
+
   <div class ="login">
 
     <div class="row">
       <div class="col-md-6 col-xs-8 col-md-offset-2 col-xs-offset-2">
 
+        <div class="userlogin">
         <h1>Login</h1>
+      </div><br>
 
         <!--login form-->
         <%= form_tag('/login', class: 'form-inline') do %>
@@ -24,4 +27,5 @@
       </div>
     </div>
   </div>
+
 </body>

@@ -1,40 +1,22 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// .tasks.index {
-//   background:#2f3437 url(http://lab.web-gate.fr/images/Noise-Fill.png);
-//   box-shadow: inset 0 0 160px hsla(0,0%,0%,.6);
-// }
-//
-//
-// .background-3 {
-//   background-image: linear-gradient(#8b9da9, #fff6e4);
-//   box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
-// }
-
-// Task Form
 .notification-icon .badge {
     color: white;
 }
 
+
 body.taskindback {
-  background: rgb(244,226,156);
-  background: -moz-linear-gradient(-45deg, rgba(244,226,156,0) 0%, rgba(59,41,58,1) 100%), -moz-linear-gradient(left, rgba(244,226,156,1) 0%, rgba(130,96,87,1) 100%);
-  background: -webkit-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -webkit-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -o-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -ms-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-  background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), linear-gradient(to right, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-  height: 100vh;
+  background-image: linear-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);height: 100vh;
   background-repeat: no-repeat;
+  padding-top: 5%;
+  height: 100%;
+  margin: 0;
 }
 
 body.new-task{
-    background: url("http://www.nataliaria.com/wp-content/uploads/2014/08/play2.jpg");
-    // background-repeat: cover;
-
-
+    background: url("http://www.wallpaperhive.net/resize.php?id=1432") no-repeat;
+    background-size: cover;
+    height: calc(100vh - 140px);
 }
 
 .createtasknew {
@@ -46,11 +28,6 @@ body.new-task{
   margin-top: 8em;
 }
 
-// .createtask {
-//   margin-top: 5em;
-//   text-align: center;
-// }
-
 body.taskin {
   margin-top: 4em;
 }
@@ -58,10 +35,6 @@ body.taskin {
 body.taskformbody {
   background: url("http://cdn.pcwallart.com/images/gold-wallpaper-3.jpg" fixed no-repeat);
 }
-
-// Tasks
-
-
 
 .postit {
   background: url("http://idtus.com/wp-content/uploads/2014/05/post-it-01.png");
@@ -111,6 +84,7 @@ body.taskformbody {
   color: white;
   padding-top: .1em;
   padding-bottom: .1em;
+  font-family: 'Salsa', cursive;
   // box-shadow: 10px 10px 5px #888888;
 }
 
@@ -149,4 +123,15 @@ body.taskformbody {
   color: white;
   text-align: center;
   padding: .1em;
+  font-family: 'Salsa', cursive;
+}
+
+div.panel-danger {
+  border-radius: 30px;
+  border-color: black;
+  border-width: .3em;
+}
+
+hr.panel-danger {
+  border-width: .2em;
 }
