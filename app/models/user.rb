@@ -9,7 +9,12 @@ class User < ApplicationRecord
   :class_name => 'Task', foreign_key: :doer_id
 
 
-  has_attached_file :avatar, styles: { small: "160x160", medium: "200x200>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: {
+      small: "160x160",
+      medium: "200x200>",
+      thumb: "100x100>"
+      }, default_url: "/images/:style/missing.png"
+      
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }
