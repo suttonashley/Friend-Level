@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 private
 
   def build_user
-    @user.attributes = user_params
+    @user = User.new(user_params)
   end
 
   def user_params
