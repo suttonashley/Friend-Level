@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 
  gem 'fog'
 
+ gem 'nokogiri'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
