@@ -7,10 +7,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    user.save!
-    if user.save!
-      session[:user_id] = user.id
+    build_user
+    @user.save!
+    if @user.save!
+      session[:user_id] = @user.id
       redirect_to user_path(current_user)
     else
       redirect_to '/signup'
@@ -28,6 +28,10 @@ class UsersController < ApplicationController
   end
 
 private
+
+  def build_user
+    @user.attributes = user_params
+  end
 
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation, :avatar)
