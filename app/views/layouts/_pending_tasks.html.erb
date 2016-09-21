@@ -7,15 +7,21 @@
           <h4 class="modal-title" id="myModalLabel">Pending Tasks</h4>
         </div>
         <div class="modal-body">
-            <div>
-              <% if current_user %>
-                <% pending_tasks.each do |task| %>
-                  Did <b><%= task.doer.username.upcase %></b> complete <b><%= task.title %></b> for <b><%= task.points %></b> point(s)?
+            <div class="row">
+              <div>
+                <% if current_user %>
+                <div class="col-sm-7">
+                  <% pending_tasks.each do |task| %>
+                    Did <b><%= task.doer.username.upcase %></b> complete <b><%= task.title %></b> for <b><%= task.points %></b> point(s)?
+                </div>
+                <div class="col-sm-5 approve-task">
                  <%#= task.due_date.strftime("%b. %d, '%y - %I:%M %p") %>
-                  <%= button_to 'Completed', accept_task_path(task.id), :method => :post,class: "btn btn-danger btn-sm"%>
-                  <%= button_to 'Reject', decline_task_path(task.id), :method => :post, class: "btn btn-danger btn-sm" %>
+                  <div><%= button_to 'Completed', accept_task_path(task.id), :method => :post,class: "btn btn-danger btn-sm"%></div>
+                  <div><%= button_to 'Reject', decline_task_path(task.id), :method => :post, class: "btn btn-danger btn-sm" %></div>
+                  <% end %>
                 <% end %>
-              <% end %>
+                </div>
+              </div>
             </div>
         </div>
       </div>
