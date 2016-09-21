@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     user = User.new(user_params)
     user.save!
     if user.save!
@@ -28,6 +29,10 @@ class UsersController < ApplicationController
   end
 
 private
+
+  def build_user
+    @user = User.new(user_params)
+  end
 
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation, :avatar)
