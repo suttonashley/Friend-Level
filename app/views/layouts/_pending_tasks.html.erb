@@ -7,25 +7,16 @@
           <h4 class="modal-title" id="myModalLabel">Pending Tasks</h4>
         </div>
         <div class="modal-body">
-          <!-- <ul> -->
-          <div>
-            <% if current_user %>
-              <% pending_tasks.each do |task| %>
-              <!-- <li> -->
-              <b>
-                <%= task.doer.username %>'s</b> task:<br>
-                <%= task.title %>
-                on <%= task.due_date.strftime("%b. %d, '%y - %I:%M %p") %>,
-              <b><br>
-                Worth <%= task.points %> Point(s)
-              </b>
-                <%= button_to 'Completed', accept_task_path(task.id), :method => :post,class: "btn btn-danger btn-sm"%><br>
-                <%= button_to 'Reject', decline_task_path(task.id), :method => :post, class: "btn btn-danger btn-sm" %><br>
-              <!-- </li> -->
+            <div>
+              <% if current_user %>
+                <% pending_tasks.each do |task| %>
+                  Did <b><%= task.doer.username.upcase %></b> complete <b><%= task.title %></b> for <b><%= task.points %></b> point(s)?
+                 <%#= task.due_date.strftime("%b. %d, '%y - %I:%M %p") %>
+                  <%= button_to 'Completed', accept_task_path(task.id), :method => :post,class: "btn btn-danger btn-sm"%>
+                  <%= button_to 'Reject', decline_task_path(task.id), :method => :post, class: "btn btn-danger btn-sm" %>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
-          <!-- </ul> -->
+            </div>
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ class Task < ApplicationRecord
   validates :title, presence: true, length: { maximum: 14 }
   validates :details, length: { maximum: 23 }
   validates :due_date, presence: true
+  validates :points, presence: true
   validate :not_past_date
 
   # enum does this for you
